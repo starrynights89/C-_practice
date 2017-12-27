@@ -1,3 +1,5 @@
+#include "std_lib_facilities.h"
+
 #ifndef GRAPH_GUARD
 #define GRAPH_GUARD 1
 
