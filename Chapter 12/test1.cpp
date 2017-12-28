@@ -42,6 +42,14 @@ int main()
     Graph_lib::Rectangle r {Point{200,200},100,50}; //top left corner, width, height
     win.attach(r);
     win.set_label("Canvas #6");
+
+    //closed polyline
+    Closed_polyline poly_rect;
+    poly_rect.add(Point{100,50});
+    poly_rect.add(Point{200,50});
+    poly_rect.add(Point{200,100});
+    poly_rect.add(Point{100,100});
+    win.attach(poly_rect);
     
 	win.wait_for_button(); //give control to the display engine
 }
