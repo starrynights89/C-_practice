@@ -17,6 +17,7 @@ int main()
     Axis ya {Axis::y, Point{20,300},280,10,"y axis"};
     ya.set_color(Color::cyan); //chose a color
     ya.label.set_color(Color::dark_red); //choose a color for the text
+    win.attach(ya);
     win.set_label("Canvas #3"); //display!
 
 	win.wait_for_button(); //give control to the display engine
