@@ -58,6 +58,11 @@ int main()
     poly_rect.set_style(Line_style(Line_style::dash,2));
     poly_rect.set_fill_color(Color::green);
     win.set_label("Canvas #7");
+
+    //adding text
+    Text t{Point{150,150},"Hellow, graphical world!"};
+    win.attach(t);
+    win.set_label("Canvas #8");
     
 	win.wait_for_button(); //give control to the display engine
 }
