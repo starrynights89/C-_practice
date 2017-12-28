@@ -20,5 +20,11 @@ int main()
     win.attach(ya);
     win.set_label("Canvas #3"); //display!
 
+    Function sine {sin,0,100,Point{20,150},1000,50,50}; //sine curve
+    //plot sin() in the range [:100) with (0,0) at (20,150)
+    //using 1000 points; scale x values * 50, scale y values *50
+    win.attach(sine);
+    win.set_label("Canvas #4");
+
 	win.wait_for_button(); //give control to the display engine
 }
