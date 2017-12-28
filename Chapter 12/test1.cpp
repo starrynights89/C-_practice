@@ -20,11 +20,28 @@ int main()
     win.attach(ya);
     win.set_label("Canvas #3"); //display!
 
+    //sine curve
     Function sine {sin,0,100,Point{20,150},1000,50,50}; //sine curve
     //plot sin() in the range [:100) with (0,0) at (20,150)
     //using 1000 points; scale x values * 50, scale y values *50
     win.attach(sine);
     win.set_label("Canvas #4");
 
+    //polygon
+    sine.set_color(Color::blue); //we changed our mind about sine's color
+    Graph_lib::Polygon poly; //a polygon; a Polygon is a kind of Shape
+    poly.add(Point{300,200}); //three points make a triangle
+    poly.add(Point{350,100});
+    poly.add(Point{400,200});
+    poly.set_color(Color::red);
+    poly.set_style(Line_style::dash);
+    win.attach(poly);
+    win.set_label("Canvas #5");
+
+    //rectangle
+    Graph_lib::Rectangle r {Point{200,200},100,50}; //top left corner, width, height
+    win.attach(r);
+    win.set_label("Canvas #6");
+    
 	win.wait_for_button(); //give control to the display engine
 }
