@@ -49,6 +49,7 @@ int main()
     poly_rect.add(Point{200,50});
     poly_rect.add(Point{200,100});
     poly_rect.add(Point{100,100});
+    poly_rect.add(Point{50,75});
     win.attach(poly_rect);
     
 	win.wait_for_button(); //give control to the display engine
