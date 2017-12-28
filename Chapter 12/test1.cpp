@@ -51,6 +51,13 @@ int main()
     poly_rect.add(Point{100,100});
     poly_rect.add(Point{50,75});
     win.attach(poly_rect);
+
+    //adding colors
+    r.set_fill_color(Color::yellow); //color the inside of the rectangle
+    poly.set_style(Line_style(Line_style::dash,4));
+    poly_rect.set_style(Line_style(Line_style::dash,2));
+    poly_rect.set_fill_color(Color::green);
+    win.set_label("Canvas #7");
     
 	win.wait_for_button(); //give control to the display engine
 }
