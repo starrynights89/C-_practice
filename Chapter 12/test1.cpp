@@ -81,7 +81,7 @@ int main()
 
     //adding more code
     Circle c{Point{100,200},50};
-    Ellipse e{Point{100,200},75,25};
+    Graph_lib::Ellipse e{Point{100,200},75,25};
     e.set_color(Color::dark_red);
     Mark m{Point{100,200},'x'};
 
@@ -99,7 +99,7 @@ int main()
 
     win.attach(sizes);
     win.attach(cal);
-    Win.set_label("Canvas #12");
+    win.set_label("Canvas #12");
     
 	win.wait_for_button(); //give control to the display engine
 }
