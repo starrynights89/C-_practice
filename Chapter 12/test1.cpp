@@ -69,5 +69,10 @@ int main()
     t.set_font_size(20);
     win.set_label("Canvas #9");
 
+    //add image
+    Image ii{Point{100,50},"image.jpg"}; //400*212-pixel jpg
+    win.attach(ii);
+    win.set_label("Canvas #10");
+
 	win.wait_for_button(); //give control to the display engine
 }
