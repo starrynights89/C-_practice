@@ -64,5 +64,10 @@ int main()
     win.attach(t);
     win.set_label("Canvas #8");
     
+    //font and size
+    t.set_font(Font::times_bold);
+    t.set_font_size(20);
+    win.set_label("Canvas #9");
+
 	win.wait_for_button(); //give control to the display engine
 }
