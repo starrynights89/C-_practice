@@ -6,7 +6,7 @@ int main()
 	using namespace Graph_lib; //our graphics facilities are in Graph_lib
 
 	Point tl(100, 100); //to become top left corner of window
-	Simple_window win(tl, 600, 400, "Canvas"); //make a simple window
+	Simple_window win(tl, 600, 600, "Canvas"); //make a simple window
 
     //x Axis
     Axis xa {Axis::x, Point{20,300},280,10,"x axis"}; //make an Axis
