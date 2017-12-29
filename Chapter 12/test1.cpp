@@ -92,7 +92,7 @@ int main()
 
     Image cal{Point{255,255}, "C://Users//alexa//source//repos//"
     "chapter12_practice c++//Release//snow_cpp.gif"}; //320*240-pixel gif
-    cal.set_mask{Point{40,40},200,150}; //display center part of image
+    cal.set_mask(Point{40,40},200,150); //display center part of image
     win.attach(c);
     win.attach(m);
     win.attach(e);
