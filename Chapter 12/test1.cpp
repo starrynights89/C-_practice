@@ -70,10 +70,14 @@ int main()
     win.set_label("Canvas #9");
 
     //add image
-    Image ii{Point{100,50},"C://Users//alexa//source//repos//"
+    Image ii{Point{100,50),"C://Users//alexa//source//repos//"
     "chapter12_practice c++//Release//image.jpg"}; //400*212-pixel jpg
     win.attach(ii);
     win.set_label("Canvas #10");
+
+    //move image
+    ii.move(100,200);
+    win.set_label("Canvas #11");
 
 	win.wait_for_button(); //give control to the display engine
 }
