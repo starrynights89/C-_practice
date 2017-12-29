@@ -70,7 +70,7 @@ int main()
     win.set_label("Canvas #9");
 
     //add image
-    Image ii{Point{100,50},"image.jpg"}; //400*212-pixel jpg
+    Image ii{Point{100,50},"soubar1.jpg"}; //400*212-pixel jpg
     win.attach(ii);
     win.set_label("Canvas #10");
 
