@@ -17,7 +17,7 @@ struct Line : Shape
 };
 
 //Line constructor
-Line::Line(Point p1, Point p2) //construct a line from two points
+Graph_lib::Line::Line(Point p1, Point p2) //construct a line from two points
 {
     add(p1); //add p1 to this shape
     add(p2); //add p2 to this shape
