@@ -8,7 +8,7 @@ struct Point
 };
 
 bool operator==(Graph_lib::Point a, Graph_lib::Point b) { return a.x==b.x && a.y==b.y; }
-bool operator!=(Graph_lib::Point a, Graph_lib::Point b) { return !(a == b); }
+
 
 //a Line is a Shape defined by two Points
 struct Line : Shape 
