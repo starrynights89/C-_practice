@@ -31,7 +31,8 @@ int main()
 	Simple_window win1{ x, 600, 400, "two lines" };
 
 	Graph_lib::Line horizontal{ x,Graph_lib::Point{ 200,100 } }; //make a horizontal line
-	Graph_lib::Line vertical{ Graph_lib::Point{ 150,50 },Graph_lib::Point{ 150,150 } }; //make a vertical line
+	Graph_lib::Line vertical{ Graph_lib::Point{ 150,50 },Graph_lib::Point{ 150,150 } };
+    //make a vertical line
 
 	win1.attach(horizontal); //attack the lines to the window
 	win1.attach(vertical);
