@@ -19,7 +19,7 @@ struct Line : Shape
 int main()
 {
 	//draw two lines
-	Graph_lib::Point x{ 100,100 };
+	const Graph_lib::Point x{ 100,100 };
 
 	Simple_window win1{ x, 600, 400, "two lines" };
 
