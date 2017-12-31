@@ -10,18 +10,15 @@ struct Point
 bool operator==(Graph_lib::Point a, Graph_lib::Point b) { return a.x==b.x && a.y==b.y; }
 bool operator!=(Graph_lib::Point a, Graph_lib::Point b) { return !('a'=='b'); }
 
-//a Line is a Shape defined by two Points
-struct Line : Shape 
+//related lines
+struct Lines : Shape 
 {
-	Line(Graph_lib::Point p1, Graph_lib::Point p2); //construct a Line from two Points
-};
+	Lines() {}; //empty
+	Lines(initializer_list<Point>lst);
 
-//Line constructor
-Graph_lib::Line::Line(Point p1, Point p2) //construct a line from two points
-{
-    add(p1); //add p1 to this shape
-    add(p2); //add p2 to this shape
-}
+	void draw_lines() const;
+	void add(Point p1, Point p2);
+};
 
 int main()
 {
