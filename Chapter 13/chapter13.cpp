@@ -20,18 +20,17 @@ struct Lines : Shape
 	void add(Graph_lib::Point p1, Graph_lib::Point p2);
 };
 
+
+
 int main()
 {
 	//draw two lines
 	Graph_lib::Lines x; 
 
-	Simple_window win1{ x, 600, 400, "two lines" };
+	Simple_window win1{x,600, 400, "two lines" };
 
 	x.add(Graph_lib::Point{100,100},Graph_lib::Point{200,100}); //first line:horizontal
 	x.add(Graph_lib::Point{150,50},Graph_lib::Point{150,150}); //second line:vertical
-
-	win1.attach(add); //attack the lines to the window
-	win1.attach(vertical);
 
 	win1.wait_for_button(); //display!
 }
