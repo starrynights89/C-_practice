@@ -11,20 +11,20 @@ bool operator==(Graph_lib::Point a, Graph_lib::Point b) { return a.x==b.x && a.y
 bool operator!=(Graph_lib::Point a, Graph_lib::Point b) { return !('a'=='b'); }
 
 //related lines
-struct Lines : Shape //related lines
+struct Line : Shape //related lines
 {
-	Line(Point p1, Point p2); 
+	Line(Graph_lib::Point p1, Graph_lib::Point p2); 
 };
 
 int main()
 {
 	//draw two lines
-	const Point x {100,100};
+	const Graph_lib::Point x {100,100};
 
 	Simple_window win1{x,600, 400, "two lines" };
 
-	Line horizontal {x,Point{200,100}}; 
-	Line vertical {Point{150,50},Point{150,150}};
+	Graph_lib::Line horizontal {x,Graph_lib::Point{200,100}}; 
+	Graph_lib::Line vertical {Graph_lib::Point{150,50},Graph_lib::Point{150,150}};
 
 	win1.attach(horizontal);
 	win1.attach(vertical);
