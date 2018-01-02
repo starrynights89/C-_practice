@@ -25,6 +25,10 @@ int main()
 	//draw two lines
 	const Graph_lib::Point tl {100,100};
 
+	Lines x;
+	x.add(Point{100,100},Point{200,100}); //horizontal
+	x.add(Point{150,50},Point{150,150}); //vertical
+
 	Simple_window x{tl,600, 400, "two lines" };
 
 	x.wait_for_button(); //display!
