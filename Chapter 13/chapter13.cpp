@@ -42,6 +42,7 @@ int main()
 	}
 
 	grid.set_color(Color::red);
+	grid.set_style(Line_style{Line_style::dash,2});
 
 	//win.attach(x);
 	win.attach(grid);
