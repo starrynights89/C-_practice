@@ -19,11 +19,11 @@ struct Line : Shape //a Line is a Shape defined by two Points
 struct Lines : Shape //related lines
 {
 	Lines() {} //empty
-	Lines(initializer_list<Point>lst); //initialize from a list of points
+	Lines(initializer_list<Graph_lib::Point>lst); //initialize from a list of points
 
 	void draw_lines() const;
-	void add(Point p1, Point p2);
-}
+	void add(Graph_lib::Point p1, Graph_lib::Point p2);
+};
 
 int main()
 {
