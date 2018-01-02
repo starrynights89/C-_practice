@@ -6,10 +6,10 @@ using namespace Graph_lib;
 // it provides one window with one "next" button for ultra-simple animation
 
 struct Simple_window : Window {
-	Simple_window(Point xy, int w, int h, const string& title )
+	Simple_window(Graph_lib::Point xy, int w, int h, const string& title)
 	: Window(xy,w,h,title),
 	  button_pushed(false),
-	  next_button(Point(x_max()-70,0), 70, 20, "Next", cb_next) { attach(next_button); }
+	  next_button(Graph_lib::Point(x_max()-70,0), 70, 20, "Next", cb_next) { attach(next_button); }
 	
 	void wait_for_button()
 	// modified event loop

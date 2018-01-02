@@ -27,8 +27,5 @@ int main()
 	Graph_lib::Lines x;
 	x.add(Graph_lib::Point{100,100},Graph_lib::Point{200,100}); //horizontal
 	x.add(Graph_lib::Point{150,50},Graph_lib::Point{150,150}); //vertical\
-
-	Lines::Simple_window win1{x,600,400,"two lines"};
-
-	win1.wait_for_button();
+	
 }
