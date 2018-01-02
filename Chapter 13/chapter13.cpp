@@ -41,6 +41,7 @@ int main()
 		grid.add(Graph_lib::Point{0,y},Graph_lib::Point{x_size,y}); //horizontal line
 	}
 
-	win.attach(x);
+	//win.attach(x);
+	win.attach(grid);
 	win.wait_for_button();
 }
