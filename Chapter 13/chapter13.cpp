@@ -12,18 +12,21 @@ bool operator!=(Graph_lib::Point a, Graph_lib::Point b) { return !('a'=='b'); }
 struct Lines : Shape //related lines
 {
 	Lines() {} //empty
-	Lines(initializer_list<Point>lst); //initialize from a list of Points
+	Lines(initializer_list<Graph_lib::Point>lst); //initialize from a list of Points
 
 	void draw_lines() const;
-	void add(Point p1, Point p2); //add a line defined by two points 
+	void add(Graph_lib::Point p1, Graph_lib::Point p2); //add a line defined by two points 
 };
 
 int main()
 {
-	Lines x;
-	x.add(Point{100,100},Point{200,100}); //horizontal
-	x.add(Point{150,50},Point{150,150}); //vertical
+	Point tl(100,100);
+	Simple_window win(tl, 600, 400, "two lines");
 
-	int x_size = win3.x_max(); //get the size of our window
-	int y_size = win3.y_max();
+
+	Graph_lib::Lines x;
+	x.add(Graph_lib::Point{100,100},Graph_lib::Point{200,100}); //horizontal
+	x.add(Graph_lib::Point{150,50},Graph_lib::Point{150,150}); //vertical
+
+	win.wait_for_button();
 }
