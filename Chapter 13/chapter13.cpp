@@ -18,19 +18,12 @@ struct Lines : Shape //related lines
 	void add(Graph_lib::Point p1, Graph_lib::Point p2); //add a line defined by two points 
 };
 
-void draw_lines() const
-{
-	Graph_lib::Lines x;
-	x.add(Graph_lib::Point{100,100},Graph_lib::Point{200,100}); //horizontal
-	x.add(Graph_lib::Point{150,50},Graph_lib::Point{150,150}); //vertical
-}
-
 int main()
 {
-	Graph_lib::Point tl(100,100);
-	Simple_window win(tl, 600, 400, "two lines");
+	Graph_lib::Lines x;
+	x.add(Graph_lib::Point{ 100,100 }, Graph_lib::Point{ 200,100 }); //horizontal line 
+	x.add(Graph_lib::Point{ 150,50 }, Graph_lib::Point{ 150,150 }); //vertical line
 
-	draw_lines();
-
+	win.attach(x);
 	win.wait_for_button();
 }
