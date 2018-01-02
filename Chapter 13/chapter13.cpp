@@ -11,10 +11,19 @@ bool operator==(Graph_lib::Point a, Graph_lib::Point b) { return a.x==b.x && a.y
 bool operator!=(Graph_lib::Point a, Graph_lib::Point b) { return !('a'=='b'); }
 
 //related lines
-struct Line : Shape //related lines
+struct Line : Shape //a Line is a Shape defined by two Points
 {
 	Line(Graph_lib::Point p1, Graph_lib::Point p2); 
 };
+
+struct Lines : Shape //related lines
+{
+	Lines() {} //empty
+	Lines(initializer_list<Point>lst); //initialize from a list of points
+
+	void draw_lines() const;
+	void add(Point p1, Point p2);
+}
 
 int main()
 {
