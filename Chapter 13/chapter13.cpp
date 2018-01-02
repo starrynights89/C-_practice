@@ -31,14 +31,14 @@ int main()
 	int x_grid = 80;
 	int y_grid = 40;
 
-	Lines grid;
+	Graph_lib::Lines grid;
 	for(int x=x_grid; x<x_size; x+=x_grid)
 	{
-		grid.add(Point{x,0},Point{x,y_size}); //vertical line
+		grid.add(Graph_lib::Point{x,0},Graph_lib::Point{x,y_size}); //vertical line
 	}
 	for(int y=y_grid; y<y_size; y+=y_grid)
 	{
-		grid.add(Point{0,y},Point{x_size,y}); //horizontal line
+		grid.add(Graph_lib::Point{0,y},Graph_lib::Point{x_size,y}); //horizontal line
 	}
 
 	win.attach(x);
