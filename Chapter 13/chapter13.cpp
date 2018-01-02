@@ -20,10 +20,9 @@ struct Lines : Shape //related lines
 
 int main()
 {
-	Point tl(100,100);
+	Graph_lib::Point tl(100,100);
 	Simple_window win(tl, 600, 400, "two lines");
-
-
+	
 	Graph_lib::Lines x;
 	x.add(Graph_lib::Point{100,100},Graph_lib::Point{200,100}); //horizontal
 	x.add(Graph_lib::Point{150,50},Graph_lib::Point{150,150}); //vertical
