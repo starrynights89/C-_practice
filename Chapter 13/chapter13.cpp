@@ -10,12 +10,6 @@ struct Point
 bool operator==(Graph_lib::Point a, Graph_lib::Point b) { return a.x==b.x && a.y==b.y; }
 bool operator!=(Graph_lib::Point a, Graph_lib::Point b) { return !('a'=='b'); }
 
-//related lines
-struct Line : Shape //a Line is a Shape defined by two Points
-{
-	Line(Graph_lib::Point p1, Graph_lib::Point p2); 
-};
-
 struct Lines : Shape //related lines
 {
 	Lines() {} //empty
@@ -28,12 +22,12 @@ struct Lines : Shape //related lines
 int main()
 {
 	//draw two lines
-	const Graph_lib::Point x {100,100};
+	const Graph_lib::Point tl {100,100};
 
-	Simple_window win1{x,600, 400, "two lines" };
+	Simple_window win1{tl,600, 400, "two lines" };
 
-	Graph_lib::Line horizontal {x,Graph_lib::Point{200,100}}; 
-	Graph_lib::Line vertical {Graph_lib::Point{150,50},Graph_lib::Point{150,150}};
+	Graph_lib::Lines horizontal {x,Graph_lib::Point{200,100}}; 
+	Graph_lib::Lines vertical {Graph_lib::Point{150,50},Graph_lib::Point{150,150}};
 
 	win1.attach(horizontal);
 	win1.attach(vertical);
