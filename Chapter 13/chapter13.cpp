@@ -21,6 +21,7 @@ struct Lines : Shape //related lines
 
 int main()
 {
+	using namespace Graph_lib;
 	//draw two lines
 	const Graph_lib::Point tl {100,100};
 
