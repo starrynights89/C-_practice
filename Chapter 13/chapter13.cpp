@@ -26,6 +26,21 @@ int main()
 	x.add(Graph_lib::Point{ 100,100 }, Graph_lib::Point{ 200,100 }); //horizontal line 
 	x.add(Graph_lib::Point{ 150,50 }, Graph_lib::Point{ 150,150 }); //vertical line
 
+	int x_size = win.x_max(); //get the size of our window
+	int y_size = win.y_max();
+	int x_grid = 80;
+	int y_grid = 40;
+
+	Lines grid;
+	for(int x=x_grid; x<x_size; x+=x_grid)
+	{
+		grid.add(Point{x,0},Point{x,y_size}); //vertical line
+	}
+	for(int y=y_grid; y<y_size; y+=y_grid)
+	{
+		grid.add(Point{0,y},Point{x_size,y}); //horizontal line
+	}
+
 	win.attach(x);
 	win.wait_for_button();
 }
