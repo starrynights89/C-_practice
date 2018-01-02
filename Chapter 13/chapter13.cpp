@@ -20,23 +20,15 @@ struct Lines : Shape //related lines
 };
 
 int main()
-try
 {
 	using namespace Graph_lib;
 	//draw two lines
 
 	Graph_lib::Lines x;
 	x.add(Graph_lib::Point{100,100},Graph_lib::Point{200,100}); //horizontal
-	x.add(Graph_lib::Point{150,50},Graph_lib::Point{150,150}); //vertical
-}
-catch (exception& e)
-{
-	cerr << "exception: " << e.what() << endl;
-	keep_window_open();
-}
+	x.add(Graph_lib::Point{150,50},Graph_lib::Point{150,150}); //vertical\
 
-catch (...)
-{
-	cerr << "exception\n";
-	keep_window_open();
+	Lines::Simple_window win1{x,600,400,"two lines"};
+
+	win1.wait_for_button();
 }
