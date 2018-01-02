@@ -25,13 +25,7 @@ int main()
 	//draw two lines
 	const Graph_lib::Point tl {100,100};
 
-	Simple_window win1{tl,600, 400, "two lines" };
+	Simple_window x{tl,600, 400, "two lines" };
 
-	Graph_lib::Lines horizontal {x,Graph_lib::Point{200,100}}; 
-	Graph_lib::Lines vertical {Graph_lib::Point{150,50},Graph_lib::Point{150,150}};
-
-	win1.attach(horizontal);
-	win1.attach(vertical);
-
-	win1.wait_for_button(); //display!
+	x.wait_for_button(); //display!
 }
