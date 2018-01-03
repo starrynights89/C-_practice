@@ -31,26 +31,6 @@ private:
 	int h; //height 
 	int w; //width
 };
-//rectangle constructor
-Graph_lib::Rectangle::Rectangle(Point xy, int ww, int hh)
-	:w{ww}, h{hh}
-{
-	if (h<=0 || w<=0)
-	{
-		error("Bad rectangle: non-positivbe side");
-	}
-	add(xy);
-}
-//rectangle constructor
-Graph_lib::Rectangle::Rectangle(Point x, Point y)
-	:w{y.x-x.x},h{y.y-x.y}
-{
-	if(h<=0 || w<=0)
-	{
-		error("Bade rectangle: first point is not top left");
-	}
-	add(x);
-}
 
 int main()
 {
@@ -120,5 +100,9 @@ int main()
 	//win.attach(cpl);
 	//win.attach(poly);
 	win.attach(rect00);
+	win.attach(rect11);
+	win.attach(rect12);
+	win.attach(rect21);
+	win.attach(rect22);
 	win.wait_for_button();
 }
