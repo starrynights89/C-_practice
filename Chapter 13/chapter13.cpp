@@ -101,6 +101,12 @@ int main()
 	win.put_on_top(rect00);
 	win.set_label("rectangles 3");
 
+	rect00.set_color(Color::invisible);
+	rect11.set_color(Color::invisible);
+	rect12.set_color(Color::invisible);
+	rect21.set_color(Color::invisible);
+	rect22.set_color(Color::invisible);
+
 	//win.attach(x);
 	//win.attach(grid);
 	//win.attach(opl);
