@@ -18,6 +18,11 @@ struct Lines : Shape //related lines
 	void add(Graph_lib::Point p1, Graph_lib::Point p2); //add a line defined by two points 
 };
 
+struct Open_polyline : Shape //open sequence of lines
+{
+	void add(Point p) {Shape::add(p);}
+};
+
 int main()
 {
 	Simple_window win(Graph_lib::Point(100, 100), 600, 400, "Canvas"); //make a window
@@ -44,7 +49,12 @@ int main()
 	grid.set_color(Color::red);
 	grid.set_style(Line_style{Line_style::dash,2});
 
+	Open_polyline opl = {
+		{100,100},{150,200},{250,250},{300,200}
+	};
+
 	//win.attach(x);
-	win.attach(grid);
+	//win.attach(grid);
+	win.attach(opl);
 	win.wait_for_button();
 }
