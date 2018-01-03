@@ -18,10 +18,11 @@ struct Lines : Shape //related lines
 	void add(Graph_lib::Point p1, Graph_lib::Point p2); //add a line defined by two points 
 };
 
+//rectangle class
 struct Rectangle : Shape
 {
-	Rectangle(Point xy, int ww, int hh);
-	Rectangle(Point x, Point y);
+	Rectangle(Graph_lib::Point xy, int ww, int hh);
+	Rectangle(Graph_lib::Point x, Graph_lib::Point y);
 	void draw_lines() const;
 
 	int height() const { return h; }
@@ -30,6 +31,26 @@ private:
 	int h; //height 
 	int w; //width
 };
+//rectangle constructor
+Graph_lib::Rectangle::Rectangle(Point xy, int ww, int hh)
+	:w{ww}, h{hh}
+{
+	if (h<=0 || w<=0)
+	{
+		error("Bad rectangle: non-positivbe side");
+	}
+	add(xy);
+}
+//rectangle constructor
+Graph_lib::Rectangle::Rectangle(Point x, Point y)
+	:w{y.x-x.x},h{y.y-x.y}
+{
+	if(h<=0 || w<=0)
+	{
+		error("Bade rectangle: first point is not top left");
+	}
+	add(x);
+}
 
 int main()
 {
@@ -78,11 +99,14 @@ int main()
 	poly.add(Graph_lib::Point(250,250));
 	poly.add(Graph_lib::Point(300,200));
 
+	//rectangle
+	Graph_lib::Rectangle rect00{Graph_lib::Point{150,100},200,100};
+	Graph_lib::Rectangle rect
 
 	//win.attach(x);
 	//win.attach(grid);
 	//win.attach(opl);
 	//win.attach(cpl);
-	win.attach(poly);
+	//win.attach(poly);
 	win.wait_for_button();
 }
