@@ -57,9 +57,17 @@ int main()
 	cpl.add(Graph_lib::Point(300,200));
 	cpl.add(Graph_lib::Point(100,250));
 
+	Polygon poly;
+	poly.add(Graph_lib::Point(100,100));
+	poly.add(Graph_lib::Point(150,200));
+	poly.add(Graph_lib::Point(250,250));
+	poly.add(Graph_lib::Point(300,200));
+
+
 	//win.attach(x);
 	//win.attach(grid);
 	//win.attach(opl);
-	win.attach(cpl);
+	//win.attach(cpl);
+	win.attach(poly);
 	win.wait_for_button();
 }
