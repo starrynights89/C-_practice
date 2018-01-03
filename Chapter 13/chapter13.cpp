@@ -94,6 +94,9 @@ int main()
 	rect12.set_fill_color(Color::red);
 	rect21.set_fill_color(Color::green);
 
+	rect11.move(400,0); //to the right of rect21
+	rect11.set_fill_color(Color::white);
+
 	//win.attach(x);
 	//win.attach(grid);
 	//win.attach(opl);
