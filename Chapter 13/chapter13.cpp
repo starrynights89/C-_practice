@@ -98,6 +98,9 @@ int main()
 	rect11.set_fill_color(Color::white);
 	win.set_label("rectangles 2");
 
+	win.put_on_top(rect00);
+	win.set_label("rectangles 3");
+
 	//win.attach(x);
 	//win.attach(grid);
 	//win.attach(opl);
