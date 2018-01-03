@@ -96,6 +96,7 @@ int main()
 
 	rect11.move(400,0); //to the right of rect21
 	rect11.set_fill_color(Color::white);
+	win.set_label("rectangles 2");
 
 	//win.attach(x);
 	//win.attach(grid);
