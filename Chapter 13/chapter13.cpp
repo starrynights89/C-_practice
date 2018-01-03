@@ -18,10 +18,24 @@ struct Lines : Shape //related lines
 	void add(Graph_lib::Point p1, Graph_lib::Point p2); //add a line defined by two points 
 };
 
+struct Rectangle : Shape
+{
+	Rectangle(Point xy, int ww, int hh);
+	Rectangle(Point x, Point y);
+	void draw_lines() const;
+
+	int height() const { return h; }
+	int width() const { return w; }
+private:
+	int h; //height 
+	int w; //width
+};
+
 int main()
 {
 	Simple_window win(Graph_lib::Point(100, 100), 600, 400, "Canvas"); //make a window
 
+	//lines
 	Graph_lib::Lines x;
 	x.add(Graph_lib::Point{ 100,100 }, Graph_lib::Point{ 200,100 }); //horizontal line 
 	x.add(Graph_lib::Point{ 150,50 }, Graph_lib::Point{ 150,150 }); //vertical line
@@ -31,6 +45,7 @@ int main()
 	int x_grid = 80;
 	int y_grid = 40;
 
+	//grid
 	Graph_lib::Lines grid;
 	for(int x=x_grid; x<x_size; x+=x_grid)
 	{
@@ -40,23 +55,23 @@ int main()
 	{
 		grid.add(Graph_lib::Point{0,y},Graph_lib::Point{x_size,y}); //horizontal line
 	}
-
+	//grid color
 	grid.set_color(Color::red);
 	grid.set_style(Line_style{Line_style::dash,2});
-
+	//open polyline
 	Open_polyline opl;
 	opl.add(Graph_lib::Point(100,100));
 	opl.add(Graph_lib::Point(150,200));
 	opl.add(Graph_lib::Point(250,250));
 	opl.add(Graph_lib::Point(300,200));
-
+	//close polyline
 	Closed_polyline cpl;
 	cpl.add(Graph_lib::Point(100,100));
 	cpl.add(Graph_lib::Point(150,200));
 	cpl.add(Graph_lib::Point(250,250));
 	cpl.add(Graph_lib::Point(300,200));
 	cpl.add(Graph_lib::Point(100,250));
-
+	//polygon
 	Graph_lib::Polygon poly;
 	poly.add(Graph_lib::Point(100,100));
 	poly.add(Graph_lib::Point(150,200));
