@@ -50,8 +50,15 @@ int main()
 	opl.add(Graph_lib::Point(250,250));
 	opl.add(Graph_lib::Point(300,200));
 
+	Closed_polyline cpl;
+	cpl.add(Graph_lib::Point(100,100));
+	cpl.add(Graph_lib::Point(150,200));
+	cpl.add(Graph_lib::Point(250,250));
+	cpl.add(Graph_lib::Point(300,200));
+
 	//win.attach(x);
 	//win.attach(grid);
 	win.attach(opl);
+	win.attach(cpl);
 	win.wait_for_button();
 }
