@@ -136,10 +136,10 @@ int main()
 
 	//marked polyline
 	Marked_polyline mpl{"1234"};
-	mpl.add(Graph_lib::Point{100,100));
-	mpl.add(Graph_lib::Point{150,200));
-	mpl.add(Graph_lib::Point{250,250));
-	mpl.add(Graph_lib::Point{300,200));
+	mpl.add(Graph_lib::Point{ 100,100 });
+	mpl.add(Graph_lib::Point{ 150,200 });
+	mpl.add(Graph_lib::Point{ 250,250 });
+	mpl.add(Graph_lib::Point{ 300,200 });
 
 	//win.attach(x);
 	//win.attach(grid);
