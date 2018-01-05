@@ -124,16 +124,24 @@ int main()
 	}
 	*/
 
+	//adding circle
+	Circle c1{Graph_lib::Point{100,200},50};
+	Circle c2{Graph_lib::Point{150,200},100};
+	Circle c3{Graph_lib::Point{200,200},150};
+
 	//win.attach(x);
 	//win.attach(grid);
 	//win.attach(opl);
-	win.attach(cpl);
-	win.attach(t);
+	//win.attach(cpl);
+	//win.attach(t);
 	//win.attach(poly);
 	//win.attach(rect00);
 	//win.attach(rect11);
 	//win.attach(rect12);
 	//win.attach(rect21);
 	//win.attach(rect22);
+	win.attach(c1);
+	win.attach(c2);
+	win.attach(c3);
 	win.wait_for_button();
 }
