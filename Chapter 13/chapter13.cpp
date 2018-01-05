@@ -130,9 +130,9 @@ int main()
 	Circle c3{Graph_lib::Point{200,200},150};
 
 	//adding Ellipse
-	Ellipse e1{Point{200,200},50,50};
-	Ellipse e2{Point{200,200},100,50};
-	Ellipse e3{Point{200,200},100,150};
+	Graph_lib::Ellipse e1{Graph_lib::Point{200,200},50,50};
+	Graph_lib::Ellipse e2{Graph_lib::Point{200,200},100,50};
+	Graph_lib::Ellipse e3{Graph_lib::Point{200,200},100,150};
 
 	//win.attach(x);
 	//win.attach(grid);
