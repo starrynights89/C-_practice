@@ -129,6 +129,11 @@ int main()
 	Circle c2{Graph_lib::Point{150,200},100};
 	Circle c3{Graph_lib::Point{200,200},150};
 
+	//adding Ellipse
+	Ellipse e1{Point{200,200},50,50};
+	Ellipse e2{Point{200,200},100,50};
+	Ellipse e3{Point{200,200},100,150};
+
 	//win.attach(x);
 	//win.attach(grid);
 	//win.attach(opl);
@@ -140,8 +145,11 @@ int main()
 	//win.attach(rect12);
 	//win.attach(rect21);
 	//win.attach(rect22);
-	win.attach(c1);
-	win.attach(c2);
-	win.attach(c3);
+	//win.attach(c1);
+	//win.attach(c2);
+	//win.attach(c3);
+	win.attach(e1);
+	win.attach(e2);
+	win.attach(e3);
 	win.wait_for_button();
 }
