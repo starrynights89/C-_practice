@@ -134,6 +134,13 @@ int main()
 	Graph_lib::Ellipse e2{Graph_lib::Point{200,200},100,50};
 	Graph_lib::Ellipse e3{Graph_lib::Point{200,200},100,150};
 
+	//marked polyline
+	Marked_polyline mpl{"1234"};
+	mpl.add(Graph_lib::Point{100,100));
+	mpl.add(Graph_lib::Point{150,200));
+	mpl.add(Graph_lib::Point{250,250));
+	mpl.add(Graph_lib::Point{300,200));
+
 	//win.attach(x);
 	//win.attach(grid);
 	//win.attach(opl);
@@ -148,8 +155,9 @@ int main()
 	//win.attach(c1);
 	//win.attach(c2);
 	//win.attach(c3);
-	win.attach(e1);
-	win.attach(e2);
-	win.attach(e3);
+	//win.attach(e1);
+	//win.attach(e2);
+	//win.attach(e3);
+	win.attach(mpl);
 	win.wait_for_button();
 }
