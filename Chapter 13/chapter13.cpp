@@ -72,6 +72,10 @@ int main()
 	cpl.add(Graph_lib::Point(250,250));
 	cpl.add(Graph_lib::Point(300,200));
 	cpl.add(Graph_lib::Point(100,250));
+
+	//adding text
+	Text t{Graph_lib::Point{200,200},"A closed polyline that isn't a polygon"};
+	t.set_color(Color::blue);
 	//polygon
 	Graph_lib::Polygon poly;
 	poly.add(Graph_lib::Point(100,100));
@@ -107,6 +111,7 @@ int main()
 	rect21.set_color(Color::invisible);
 	rect22.set_color(Color::invisible);
 
+	/*
 	Vector_ref<Graph_lib::Rectangle>vr;
 	for(int i=0; i<16; i++)
 	{
@@ -117,10 +122,13 @@ int main()
 			win.attach(vr[vr.size()-1]);
 		}
 	}
+	*/
+
 	//win.attach(x);
 	//win.attach(grid);
 	//win.attach(opl);
-	//win.attach(cpl);
+	win.attach(cpl);
+	win.attach(t);
 	//win.attach(poly);
 	//win.attach(rect00);
 	//win.attach(rect11);
