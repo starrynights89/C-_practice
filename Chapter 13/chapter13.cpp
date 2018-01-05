@@ -107,15 +107,26 @@ int main()
 	rect21.set_color(Color::invisible);
 	rect22.set_color(Color::invisible);
 
+	Vector_ref<Rectangle>vr;
+	for(int i=0; i<16; i++)
+	{
+		for(int j=0; j<16; j++)
+		{
+			vr.push_back(new Rectangle{Point{i*20,j*20},20,20});
+			vr[vr.size()-1].set_fill_color(Color{i*16+j});
+			win20.attach(vr[vr.size()-1]);
+		}
+	}
 	//win.attach(x);
 	//win.attach(grid);
 	//win.attach(opl);
 	//win.attach(cpl);
 	//win.attach(poly);
-	win.attach(rect00);
-	win.attach(rect11);
-	win.attach(rect12);
-	win.attach(rect21);
-	win.attach(rect22);
+	//win.attach(rect00);
+	//win.attach(rect11);
+	//win.attach(rect12);
+	//win.attach(rect21);
+	//win.attach(rect22);
+	win.attacg(vr);
 	win.wait_for_button();
 }
