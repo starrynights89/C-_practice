@@ -148,9 +148,9 @@ int main()
 	pp.add(Graph_lib::Point{ 250,250 });
 	pp.add(Graph_lib::Point{ 300,200 });
 
-	Mark m1 {Point{100,200},'x'};
-	Mark m2 {Point{150,200},'y'};
-	Mark m3 {Point{200,200},'z'};
+	Mark m1 {Graph_lib::Point{100,200},'x'};
+	Mark m2 {Graph_lib::Point{150,200},'y'};
+	Mark m3 {Graph_lib::Point{200,200},'z'};
 	c1.set_color(Color::blue);
 	c2.set_color(Color::red);
 	c3.set_color(Color::green);
