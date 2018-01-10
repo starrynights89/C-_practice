@@ -8,7 +8,14 @@ int main()
 
     //adding grid
     Graph_lib::Lines grid;
-    
+    int x_size = 800;
+    int y_size = 800;
+    for (int i = 100; i<=x_size; i+=100)
+    {
+        grid.add(Point(i,0),Point(i,y_size));
+        gridd.add(Point(0,i),Point(x_size,i));
+    }
 
+    win.attach(grid);
     win.wait_for_button();
 }
