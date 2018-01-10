@@ -41,27 +41,26 @@ int main()
     win.attach(plane3);
     win.wait_for_button();
 
-    //place 100x100 that moves with clicking next
-    /*
-	Image anime(Point(0,0),"C://Users//alexa//source//repos//"
-	"chapter13_practice c++//Release//image1.png");
-	anime.set_mask(Point(110, 70), 100, 100);
-	//win.attach(anime);
+ // add a 100-by-100 image, have it move around
+    Image snow(Point(0,0),"C://Users//alexa//source//repos//"
+	"chapter13_practice c++//Release//snow_cpp.gif");
+    snow.set_mask(Point(110,70),100,100);
+    win.attach(snow);
+    //win.resize(1000,800);
+    win.wait_for_button();
 
     int x = 0;
     int y = 0;
     int dx = 0;
     int dy = 0;
-    while(true)
+    while (true)
     {
         x = randint(8);
         y = randint(8);
-        dx = 100*x - anime.point(0).x;
-        dy = 100*y - anime.point(0).y;
-        anime.move(dx,dy);
-		win.wait_for_button();
+        dx = 100*x - snow.point(0).x;
+        dy = 100*y - snow.point(0).y;
+        snow.move(dx,dy);
+        //win.resize(1000,800);
+        win.wait_for_button();
     }
-	*/
-
-    //win.resize(1000,800);
 }
