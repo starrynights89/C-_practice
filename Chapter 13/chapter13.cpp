@@ -141,6 +141,9 @@ int main()
 	mpl.add(Graph_lib::Point{ 250,250 });
 	mpl.add(Graph_lib::Point{ 300,200 });
 
+	//marks
+	Marks pp{"x",{{100,100},{150,200},{250,250},{300,200}}};
+
 	//win.attach(x);
 	//win.attach(grid);
 	//win.attach(opl);
@@ -158,6 +161,7 @@ int main()
 	//win.attach(e1);
 	//win.attach(e2);
 	//win.attach(e3);
-	win.attach(mpl);
+	//win.attach(mpl);
+	win.attach(pp);
 	win.wait_for_button();
 }
