@@ -13,7 +13,7 @@ int main()
     for (int i = 100; i<=x_size; i+=100)
     {
         grid.add(Point(i,0),Point(i,y_size));
-        gridd.add(Point(0,i),Point(x_size,i));
+        grid.add(Point(0,i),Point(x_size,i));
     }
 
     win.attach(grid);
