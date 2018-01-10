@@ -5,7 +5,7 @@ int main()
 {
     //adding window
     Simple_window win(Point(300,50), 800, 1000, "Grid");
-    win.wait_for_button();
+	win.wait_for_button();
 
     //adding grid
     Lines grid;
@@ -41,11 +41,11 @@ int main()
     win.attach(plane3);
     win.wait_for_button();
 
- // add a 100-by-100 image, have it move around
-    Image snow(Point(0,0),"C://Users//alexa//source//repos//"
-	"chapter13_practice c++//Release//snow_cpp.gif");
-    snow.set_mask(Point(110,70),100,100);
-    win.attach(snow);
+	//add a 100-by-100 image, have it move around
+    Image anime(Point(0,0),"C://Users//alexa//source//repos//"
+	"chapter13_practice c++//Release//anime.jpg");
+    //anime.set_mask(Point(110,70),100,100);
+    win.attach(anime);
     //win.resize(1000,800);
     win.wait_for_button();
 
@@ -57,9 +57,9 @@ int main()
     {
         x = randint(8);
         y = randint(8);
-        dx = 100*x - snow.point(0).x;
-        dy = 100*y - snow.point(0).y;
-        snow.move(dx,dy);
+        dx = 100*x - anime.point(0).x;
+        dy = 100*y - anime.point(0).y;
+        anime.move(dx,dy);
         //win.resize(1000,800);
         win.wait_for_button();
     }
