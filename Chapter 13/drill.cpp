@@ -47,7 +47,7 @@ int main()
 		grid.add(Graph_lib::Point(0, i), Graph_lib:: Point(x_size, i));
     }
 
-    //make squares
+    //make squares that are red along a vertical line
     Vector_ref<Graph_lib::Rectangle>vr;
     for (int i=0; i<8; i++)
     {
@@ -57,6 +57,6 @@ int main()
     }
 
     win.attach(grid);
-    //win.resize(1000,800);
+    win.resize(1000,800);
     win.wait_for_button();
 }
