@@ -1,37 +1,6 @@
 #include "Graph.h"
 #include "Simple_window.h"
 
-struct Point
-{
-    int x, y;
-};
-
-bool operator==(Graph_lib::Point a, Graph_lib::Point b) { return a.x==b.x && a.y==b.y; }
-bool operator!=(Graph_lib::Point a, Graph_lib::Point b) { return !('a'=='b'); }
-
-struct Lines : Shape //related lines
-{
-	Lines() {} //empty
-	Lines(initializer_list<Graph_lib::Point>lst); //initialize from a list of Points
-
-	void draw_lines() const;
-	void add(Graph_lib::Point p1, Graph_lib::Point p2); //add a line defined by two points 
-};
-
-//rectangle class
-struct Rectangle : Shape
-{
-	Rectangle(Graph_lib::Point xy, int ww, int hh);
-	Rectangle(Graph_lib::Point x, Graph_lib::Point y);
-	void draw_lines() const;
-
-	int height() const { return h; }
-	int width() const { return w; }
-private:
-	int h; //height 
-	int w; //width
-};
-
 int main()
 {
     //adding window
@@ -55,6 +24,9 @@ int main()
         vr[vr.size()-1].set_fill_color(Color::red);
         win.attach(vr[vr.size()-1]);
     }
+
+    //place 3 copies of a 200x200 image, don't cover the red squares
+    
 
     win.attach(grid);
     win.resize(1000,800);
