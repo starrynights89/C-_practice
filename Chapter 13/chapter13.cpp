@@ -148,6 +148,13 @@ int main()
 	pp.add(Graph_lib::Point{ 250,250 });
 	pp.add(Graph_lib::Point{ 300,200 });
 
+	Mark m1 {Point{100,200},'x'};
+	Mark m2 {Point{150,200},'y'};
+	Mark m3 {Point{200,200},'z'};
+	c1.set_color(Color::blue);
+	c2.set_color(Color::red);
+	c3.set_color(Color::green);
+
 	//win.attach(x);
 	//win.attach(grid);
 	//win.attach(opl);
@@ -159,13 +166,16 @@ int main()
 	//win.attach(rect12);
 	//win.attach(rect21);
 	//win.attach(rect22);
-	//win.attach(c1);
-	//win.attach(c2);
-	//win.attach(c3);
+	win.attach(c1);
+	win.attach(c2);
+	win.attach(c3);
 	//win.attach(e1);
 	//win.attach(e2);
 	//win.attach(e3);
 	//win.attach(mpl);
-	win.attach(pp);
+	//win.attach(pp);
+	win.attach(m1);
+	win.attach(m2);
+	win.attach(m3);
 	win.wait_for_button();
 }
