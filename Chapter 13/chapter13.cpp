@@ -111,7 +111,7 @@ int main()
 	rect21.set_color(Color::invisible);
 	rect22.set_color(Color::invisible);
 
-	/*
+	//palette of 256 colors
 	Vector_ref<Graph_lib::Rectangle>vr;
 	for(int i=0; i<16; i++)
 	{
@@ -121,8 +121,7 @@ int main()
 			vr[vr.size()-1].set_fill_color(Color{i*16+j});
 			win.attach(vr[vr.size()-1]);
 		}
-	}
-	*/
+	}	
 
 	//adding circle
 	Circle c1{Graph_lib::Point{100,200},50};
@@ -185,7 +184,7 @@ int main()
 	//win.attach(m1);
 	//win.attach(m2);
 	//win.attach(m3);
-	win.attach(path);
-	win.attach(rita);
+	//win.attach(path);
+	//win.attach(rita);
 	win.wait_for_button();
 }
