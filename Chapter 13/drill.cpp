@@ -2,6 +2,7 @@
 #include "Simple_window.h"
 
 int main()
+try
 {
     //adding window
     Simple_window win(Graph_lib::Point(100,100), 800, 1000, "Grid");
@@ -19,4 +20,15 @@ int main()
     win.attach(grid);
     //win.resize(1000,800);
     win.wait_for_button();
+}
+
+catch (exception& e)
+{
+    cerr << "exception: " << e.what() << endl;
+    keep_window_open();
+}
+catch (...)
+{
+    cerr << "exception\n";
+    keep_window_open();
 }
