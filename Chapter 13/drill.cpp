@@ -33,10 +33,28 @@ int main()
     Image plane3(Point(600,400),"C://Users//alexa//source//repos//"
 	"chapter13_practice c++//Release//image.jpg");
 
+    //place 100x100 that moves with clicking next
+    Image anime(Point(0,0),"C://Users//alexa//source//repos//"
+	"chapter13_practice c++//Release//image1.png");
+
+    int x = 0;
+    int y = 0;
+    int dx = 0;
+    int dy = 0;
+    while(true)
+    {
+        x = randint(8);
+        y = randint(8);
+        dx = 100*x - anime.point(0).x;
+        dy = 100*y - anime.point(0).y;
+        anime.move(dx,dy);
+    }
+
     win.attach(grid);
     win.resize(1000,800);
     win.attach(plane1);
 	win.attach(plane2);
 	win.attach(plane3);
+    win.attach(anime);
     win.wait_for_button();
 }
