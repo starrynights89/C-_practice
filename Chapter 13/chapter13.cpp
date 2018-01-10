@@ -155,6 +155,13 @@ int main()
 	c2.set_color(Color::red);
 	c3.set_color(Color::green);
 
+	//image
+	Image rita{Point{0,0},"C://Users//alexa//source//repos//"
+	"chapter13_practice c++//Release//rita_path.gif"};
+	Image path{Point{0,0}"C://Users//alexa//source//repos//"
+	"chapter13_practice c++//Release//rita.jpg"};
+	path.set_mask(Point{50,250},600,400); //select likely landfall
+
 	//win.attach(x);
 	//win.attach(grid);
 	//win.attach(opl);
@@ -166,16 +173,18 @@ int main()
 	//win.attach(rect12);
 	//win.attach(rect21);
 	//win.attach(rect22);
-	win.attach(c1);
-	win.attach(c2);
-	win.attach(c3);
+	//win.attach(c1);
+	//win.attach(c2);
+	//win.attach(c3);
 	//win.attach(e1);
 	//win.attach(e2);
 	//win.attach(e3);
 	//win.attach(mpl);
 	//win.attach(pp);
-	win.attach(m1);
-	win.attach(m2);
-	win.attach(m3);
+	//win.attach(m1);
+	//win.attach(m2);
+	//win.attach(m3);
+	win.attach(path);
+	win.attach(rita);
 	win.wait_for_button();
 }
