@@ -1,0 +1,9 @@
+﻿  test1.cpp
+c:\users\alexa\onedrive\documents\github\c-_practice\chapter 12\gui.h(106): warning C4018: '<': signed/unsigned mismatch
+c:\users\alexa\onedrive\documents\github\c-_practice\chapter 12\gui.h(111): warning C4018: '<': signed/unsigned mismatch
+c:\users\alexa\onedrive\documents\github\c-_practice\chapter 12\gui.h(116): warning C4018: '<': signed/unsigned mismatch
+c:\users\alexa\onedrive\documents\github\c-_practice\chapter 12\graph.h(101): warning C4018: '<': signed/unsigned mismatch
+  c:\users\alexa\onedrive\documents\github\c-_practice\chapter 12\graph.h(101): note: while compiling class template member function 'Graph_lib::Vector_ref<Graph_lib::Button>::~Vector_ref(void)'
+  c:\users\alexa\onedrive\documents\github\c-_practice\chapter 12\gui.h(96): note: see reference to function template instantiation 'Graph_lib::Vector_ref<Graph_lib::Button>::~Vector_ref(void)' being compiled
+  c:\users\alexa\onedrive\documents\github\c-_practice\chapter 12\gui.h(98): note: see reference to class template instantiation 'Graph_lib::Vector_ref<Graph_lib::Button>' being compiled
+  chapter12_practice c++.vcxproj -> C:\Users\alexa\source\repos\chapter12_practice C++\Debug\chapter12_practice c++.exe
