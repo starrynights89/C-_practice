@@ -156,11 +156,11 @@ int main()
 	c3.set_color(Color::green);
 
 	//image
-	Image rita{Point{0,0},"C://Users//alexa//source//repos//"
+	Image rita{Graph_lib::Point{0,0},"C://Users//alexa//source//repos//"
 	"chapter13_practice c++//Release//rita_path.gif"};
-	Image path{Point{0,0}"C://Users//alexa//source//repos//"
-	"chapter13_practice c++//Release//rita.jpg"};
-	path.set_mask(Point{50,250},600,400); //select likely landfall
+	Image path{ Graph_lib::Point{0,0},"C://Users//alexa//source//repos//"
+	"chapter13_practice c++//Release//rita.jpg" };
+	path.set_mask(Graph_lib::Point{50,250},600,400); //select likely landfall
 
 	//win.attach(x);
 	//win.attach(grid);
