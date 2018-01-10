@@ -26,9 +26,11 @@ int main()
     }
 
     //place 3 copies of a 200x200 image, don't cover the red squares
-    
+    Image plane1(Point(200,0),"C://Users//alexa//source//repos//"
+	"chapter13_practice c++//Release//image.jpg");
 
     win.attach(grid);
     win.resize(1000,800);
+    win.attach(plane1);
     win.wait_for_button();
 }
