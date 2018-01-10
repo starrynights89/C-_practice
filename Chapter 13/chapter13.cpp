@@ -142,7 +142,11 @@ int main()
 	mpl.add(Graph_lib::Point{ 300,200 });
 
 	//marks
-	Marks pp{"x",{{100,100},{150,200},{250,250},{300,200}}};
+	Marks pp{ "x" }; 
+	pp.add(Graph_lib::Point{100, 100});
+	pp.add(Graph_lib::Point{ 150,200 });
+	pp.add(Graph_lib::Point{ 250,250 });
+	pp.add(Graph_lib::Point{ 300,200 });
 
 	//win.attach(x);
 	//win.attach(grid);
