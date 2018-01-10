@@ -17,5 +17,6 @@ int main()
     }
 
     win.attach(grid);
+    //win.resize(1000,800);
     win.wait_for_button();
 }
