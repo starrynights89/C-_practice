@@ -13,7 +13,7 @@ public:
 class D1 : public B1
 {
 public:
-    void vf() { cout << "D1::f()\n"; }
+    void vf() { cout << "D1::vf()\n"; }
     void f() { cout << "D1::f()\n"; }
 };
 
