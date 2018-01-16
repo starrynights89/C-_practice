@@ -29,11 +29,13 @@ int main()
 
     Axis x(Axis::x,Point(20,y_orig),
           xlength,xlength/x_scale,"one notch == 1");
+    x.set_color(Color::red);
     win.attach(x);
     win.wait_for_button();
 
     Axis y(Axis::y,Point(x_orig,ylength+20),
           ylength,ylength/y_scale,"one notch == 1");
+    y.set_color(Color::red);
     win.attach(y);
     win.wait_for_button();
 
