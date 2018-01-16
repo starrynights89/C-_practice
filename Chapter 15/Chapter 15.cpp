@@ -72,7 +72,7 @@ int main()
     win.wait_for_button();
 
     Function f1(log,0.0000001,r_max,orig,200,30,30); //log() logarithm, base e
-    win.atach(f1);
+    win.attach(f1);
     win.wait_for_button();
 
     Function f2(sin,r_min,r_max,orig,200,30,30); //sin()
