@@ -59,8 +59,15 @@ int main()
     win.set_label("Function graphing: label functions");
     win.wait_for_button();
 
-    Function s4(sloping_cos,r_min,r_max,orig,n_points,x_scale,y_scale);
+    Function s4(cos,r_min,r_max,orig,400,30,30);
+    s4.set_color(Color::blue);
     win.attach(s4);
+    win.wait_for_button();
+
+    Function s5(sloping_cos,r_min,r_max,orig,400,30,30);
+    win.attach(s5);
+    x.label.move(-160,0);
+    x.notches.set_color(Color::dark_red);
     win.set_label("Function graphing: more functions");
     win.wait_for_button();
 }
