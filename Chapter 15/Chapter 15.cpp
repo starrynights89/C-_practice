@@ -8,7 +8,7 @@ int main()
 
     constexpr int x_orig = xmax/2; //position of (0,0) is center of window
     constexpr int y_orig = ymax/2;
-    const Graph_lib::Point orig {x_orig,y_orig};
+    const Point orig {x_orig,y_orig};
 
     constexpr int r_min = -10; //range [-10:11)
     constexpr int r_max = 11; 
