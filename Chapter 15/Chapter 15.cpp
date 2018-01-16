@@ -70,4 +70,18 @@ int main()
     x.notches.set_color(Color::dark_red);
     win.set_label("Function graphing: more functions");
     win.wait_for_button();
+
+    Function f1(log,0.0000001,r_max,orig,200,30,30); //log() logarithm, base e
+    win.atach(f1);
+    win.wait_for_button();
+
+    Function f2(sin,r_min,r_max,orig,200,30,30); //sin()
+    f2.set_color(Color::blue);
+    win.attach(f2);
+    win.wait_for_button();
+
+    Function f3(cos,r_min,r_max,orig,200,30,30); //cos()
+    win.attach(f3);
+    win.wait_for_button();
+
 }
