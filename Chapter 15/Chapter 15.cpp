@@ -22,7 +22,20 @@ int main()
     constexpr int x_scale = 30; //scaling factors
     constexpr int y_scale = 30;
 
+    constexpr int xlength = xmax-40; //make the axis a bit smaller than the window
+    constexpr int ylength = ymax-40;
+
     Simple_window win {Point{100,100},xmax,ymax,"Function graphing"};
+
+    Axis x(Axis::x,Point(20,y_orig),
+          xlength,xlength/x_scale,"one notch == 1");
+    win.attach(x);
+    win.wait_for_button();
+
+    Axis y(Axis::y,Point(x_orig,ylength+20),
+          ylength,ylength/y_scale,"one notch == 1");
+    win.attach(y);
+    win.wait_for_button();
 
     Function s(one,r_min,r_max,orig,n_points,x_scale,y_scale);
     Text ts(Point(100,y_orig-40),"one");
