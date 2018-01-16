@@ -4,7 +4,7 @@
 #include "Point.h"
 #include<vector>
 //#include<string>
-//#include<cmath>
+#include<cmath>
 #include "fltk.h"
 #include "std_lib_facilities.h"
 
