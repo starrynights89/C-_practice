@@ -85,6 +85,7 @@ int main()
     win.wait_for_button();
 
     Function f4(exp,r_min,r_max,orig,200,30,30); //exp() exponential e^x
+    f4.set_color(Color::green);
     win.attach(f4);
     win.wait_for_button();
 }
