@@ -23,6 +23,17 @@ public:
     void pvf() { cout << "D2::pvf()\n"; }
 };
 
+class B2
+{
+public:
+    virtual void pvf() =0;
+};
+
+void f(B2& b2)
+{
+    b2.pvf();
+}
+
 int main()
 {
     B1 b1;
@@ -33,5 +44,14 @@ int main()
     d1.vf();
     d1.f();
 
+    B1& bref = d1;
+    bref.vf();
+    bref.f();
+
+    D2 d2;
+    d2.f();
+    d2.vf();
+    d2.pvf();
+    
     keep_window_open();
 }
