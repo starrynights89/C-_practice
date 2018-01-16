@@ -1,26 +1,26 @@
 #include "Graph.h"
 #include "Simple_window.h"
 
-double one(double x) { return 1; }
+double one(double) { return 1; }
 double slope(double x) { return x/2; }
 double square(double x) { return x*x; }
 
 int main()
 {
-    const int xmax = 600; //window size
-    const int ymax = 400; 
+    constexpr int xmax = 600; //window size
+    constexpr int ymax = 400; 
 
-    const int x_orig = xmax/2; //position of (0,0) is center of window
-    const int y_orig = ymax/2;
+    constexpr int x_orig = xmax/2; //position of (0,0) is center of window
+    constexpr int y_orig = ymax/2;
     const Point orig(x_orig,y_orig);
 
-    const int r_min = -10; //range [-10:11)
-    const int r_max = 11; 
+    constexpr int r_min = -10; //range [-10:11)
+    constexpr int r_max = 11; 
 
-    const int n_points = 400; //number of points used in range
+    constexpr int n_points = 400; //number of points used in range
 
-    const int x_scale = 30; //scaling factors
-    const int y_scale = 30;
+    constexpr int x_scale = 30; //scaling factors
+    constexpr int y_scale = 30;
 
     Simple_window win {Point{100,100},xmax,ymax,"Function graphing"};
 
