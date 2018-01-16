@@ -25,14 +25,21 @@ int main()
     Simple_window win {Point{100,100},xmax,ymax,"Function graphing"};
 
     Function s(one,r_min,r_max,orig,n_points,x_scale,y_scale);
+    Text ts(Point(100,y_orig-40),"one");
     win.attach(s);
+    win.attach(ts);
     win.wait_for_button();
 
     Function s2(slope,r_min,r_max,orig,n_points,x_scale,y_scale);
+    Text ts2(Point(100,y_orig+y_orig/2-20),"x/2");
     win.attach(s2);
+    win.attach(ts2);
     win.wait_for_button();
 
     Function s3(square,r_min,r_max,orig,n_points,x_scale,y_scale);
+    Text ts3(Point(x_orig-100,20),"x*x");
     win.attach(s3);
+    win.attach(ts3);
+    win.set_label("Function graphing: label functions");
     win.wait_for_button();
 }
