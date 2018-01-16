@@ -58,4 +58,9 @@ int main()
     win.attach(ts3);
     win.set_label("Function graphing: label functions");
     win.wait_for_button();
+
+    Function s4(sloping_cos,r_min,r_max,orig,n_points,x_scale,y_scale);
+    win.attach(s4);
+    win.set_label("Function graphing: more functions");
+    win.wait_for_button();
 }
