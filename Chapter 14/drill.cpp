@@ -29,6 +29,20 @@ public:
     virtual void pvf() =0;
 };
 
+class D21 : public B2
+{
+public:
+    void pvf() { cout << s << endl; }
+    string s;
+};
+
+class D22 : public B2
+{
+public:
+    void pvf() { cout << n << endl; }
+    int n;
+};
+
 void f(B2& b2)
 {
     b2.pvf();
@@ -52,6 +66,13 @@ int main()
     d2.f();
     d2.vf();
     d2.pvf();
+
+    D21 d21;
+    d21.s = "d21.s";
+    D22 d22;
+    d22.n = 22;
+    f(d21);
+    f(d22);
     
     keep_window_open();
 }
