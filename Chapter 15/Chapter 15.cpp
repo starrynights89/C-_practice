@@ -1,6 +1,17 @@
 #include "Graph.h"
 #include "Simple_window.h"
 
+int fac(int n) //factorial(n); n!
+{
+      int r = 1; 
+      while (n>1)
+      {
+            r*=n;
+            --n;
+      }
+      return r;
+}
+
 double one(double) { return 1; }
 double slope(double x) { return x/2; }
 double square(double x) { return x*x; }
