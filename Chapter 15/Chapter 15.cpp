@@ -126,5 +126,4 @@ int main()
           win.wait_for_button();
           win.detach(e);
     }
-
 }
