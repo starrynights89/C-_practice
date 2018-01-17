@@ -111,5 +111,20 @@ int main()
 
     Function real_exp(exp,r_min,r_max,orig,200,x_scale,y_scale);
     real_exp.set_color(Color::blue);
+    win.attach(real_exp);
+    win.wait_for_button();
+
+    for(int n=0; n<50; n++)
+    {
+          ostringstream ss;
+          ss << "exp approximation; n==" << n;
+          win.set_label(ss.str());
+          //get next approximation:
+          Function e([n](double x) { return expe(x,n); },
+                r_min,r_max,orig,200,x_scale,y_scale);
+          win.attach(e);
+          win.wait_for_button();
+          win.detache(e);
+    }
 
 }
