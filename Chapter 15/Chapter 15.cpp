@@ -109,6 +109,10 @@ int main()
     win.wait_for_button();
     */
 
+    Function s5([](double x) { return cos(x)+slope(x); },r_min,r_max,orig,400,30,30);
+    win.attach(s5);
+    win.wait_for_button();
+
     Function real_exp(exp,r_min,r_max,orig,200,x_scale,y_scale);
     real_exp.set_color(Color::blue);
     win.attach(real_exp);
@@ -120,8 +124,7 @@ int main()
           ss << "exp approximation; n==" << n;
           win.set_label(ss.str());
           //get next approximation:
-          Function e([n](double x) { return expe(x,n); },
-                r_min,r_max,orig,200,x_scale,y_scale);
+	    Function e([n](double x) { return expe(x,n); },r_min,r_max,orig,200,x_scale,y_scale);
           win.attach(e);
           win.wait_for_button();
           win.detach(e);
