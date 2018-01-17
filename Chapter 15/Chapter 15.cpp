@@ -124,7 +124,8 @@ int main()
           ss << "exp approximation; n==" << n;
           win.set_label(ss.str());
           //get next approximation:
-	    Function e([n](double x) { return expe(x,n); },r_min,r_max,orig,200,x_scale,y_scale);
+	    Function e([n](double x) -> double { return expe(x,n); },
+                  r_min,r_max,orig,200,x_scale,y_scale);
           win.attach(e);
           win.wait_for_button();
           win.detach(e);
