@@ -17,6 +17,12 @@ double slope(double x) { return x/2; }
 double square(double x) { return x*x; }
 double sloping_cos(double x) { return cos(x)+slope(x); }
 double term(double x, int n) { return pow(x,n)/fac(n); } //nth term of series
+double expe(double x, int n)
+{
+      double sum = 0;
+      for (int i=0; i<n; i++) sum+=term(x,i);
+      return sum;
+}
 
 int main()
 {
@@ -102,5 +108,8 @@ int main()
     win.attach(f4);
     win.wait_for_button();
     */
+
+    Function real_exp(exp,r_min,r_max,orig,200,x_scale,y_scale);
+    real_exp.set_color(Color::blue);
 
 }
