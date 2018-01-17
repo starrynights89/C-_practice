@@ -124,7 +124,7 @@ int main()
                 r_min,r_max,orig,200,x_scale,y_scale);
           win.attach(e);
           win.wait_for_button();
-          win.detache(e);
+          win.detach(e);
     }
 
 }
