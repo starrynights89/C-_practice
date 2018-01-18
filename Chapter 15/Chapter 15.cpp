@@ -59,7 +59,7 @@ int main()
     constexpr int xlength = xmax-40; //make the axis a bit smaller than the window
     constexpr int ylength = ymax-40;
 
-    Simple_window win {Point{100,100},xmax,ymax,"Function graphing"};
+    Simple_window win {Point{100,100},xmax,ymax," "};
 
     Axis x(Axis::x,Point(20,y_orig),
           xlength,xlength/x_scale,"one notch == 1");
