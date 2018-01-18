@@ -17,10 +17,11 @@ double slope(double x) { return x/2; }
 double square(double x) { return x*x; }
 double sloping_cos(double x) { return cos(x)+slope(x); }
 double term(double x, int n) { return pow(x,n)/fac(n); } //nth term of series
+
 double expe(double x, int n)
 {
       double sum = 0;
-      for (int i=0; i<n; i++) sum+=term(x,i);
+      for (int i=0; i<n; i++) { sum+=term(x,i); }
       return sum;
 }
 
@@ -118,16 +119,18 @@ int main()
     win.attach(real_exp);
     win.wait_for_button();
 
+    /*
     for(int n=0; n<50; n++)
     {
           ostringstream ss;
           ss << "exp approximation; n==" << n;
           win.set_label(ss.str());
           //get next approximation:
-	    Function e([n](double x) -> double { return expe(x,n); },
+          Function e([n](double x) { return expe(x,n); },
                   r_min,r_max,orig,200,x_scale,y_scale);
           win.attach(e);
           win.wait_for_button();
           win.detach(e);
     }
+    */
 }
