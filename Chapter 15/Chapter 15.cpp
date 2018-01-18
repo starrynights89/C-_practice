@@ -12,6 +12,13 @@ int fac(int n) //factorial(n); n!
       return r;
 }
 
+double exp0(double x) { return 0; }
+double exp1(double x) { return 1; }
+double exp2(double x) { return 1 + x; }
+double exp3(double x) { return 1 + x + pow(x, 2) / fac(2); }
+double exp4(double x) { return 1 + x + pow(x, 2) / fac(2) + pow(x,3) / fac(3); }
+double exp5(double x) { return 1 + x + pow(x, 2) / fac(2) + pow(x, 3) / fac(3) + pow(x, 4) / fac(4); }
+
 double one(double) { return 1; }
 double slope(double x) { return x/2; }
 double square(double x) { return x*x; }
@@ -23,6 +30,13 @@ double expe(double x, int n)
       double sum = 0;
       for (int i=0; i<n; i++) { sum+=term(x,i); }
       return sum;
+}
+
+int expN_number_of_terms = 10;
+ 
+double expN(double x)
+{
+    return expe(x, expN_number_of_terms);
 }
 
 int main()
@@ -119,18 +133,16 @@ int main()
     win.attach(real_exp);
     win.wait_for_button();
 
-    /*
     for(int n=0; n<50; n++)
     {
           ostringstream ss;
           ss << "exp approximation; n==" << n;
           win.set_label(ss.str());
           //get next approximation:
-          Function e([n](double x) { return expe(x,n); },
-                  r_min,r_max,orig,200,x_scale,y_scale);
+          expN_number_of_terms = n;
+          Function e(expN,r_min,r_max,orig,200,x_scale,y_scale);
           win.attach(e);
           win.wait_for_button();
           win.detach(e);
     }
-    */
 }
