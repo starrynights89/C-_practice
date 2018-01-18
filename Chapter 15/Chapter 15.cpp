@@ -122,11 +122,11 @@ int main()
     f4.set_color(Color::green);
     win.attach(f4);
     win.wait_for_button();
-    */
 
     Function s5([](double x) { return cos(x)+slope(x); },r_min,r_max,orig,400,30,30);
     win.attach(s5);
     win.wait_for_button();
+    */
 
     Function real_exp(exp,r_min,r_max,orig,200,x_scale,y_scale);
     real_exp.set_color(Color::blue);
