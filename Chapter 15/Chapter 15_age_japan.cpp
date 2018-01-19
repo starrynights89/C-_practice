@@ -61,13 +61,13 @@ istream& operator>>(istream& is, Distribution& d)
 constexpr int xmax = 600; //window size
 constexpr int ymax = 400; 
 
-constexpr int xoffset = 100;
-constexpr int yoffset = 60;
+constexpr int xoffset = 100; //distance from left-hand side of window to y axis
+constexpr int yoffset = 60; //distance from bottom of window to x axis
 
-constexpr int xspace = 40;
+constexpr int xspace = 40; //space beyond axis
 constexpr int yspace = 40;
 
-constexpr int xlength = xmax-xoffset-xspace; 
+constexpr int xlength = xmax-xoffset-xspace;  //length of axes
 constexpr int ylength = ymax-yoffset-yspace;
 
 constexpr int base_year = 1960;
