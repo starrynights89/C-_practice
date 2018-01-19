@@ -84,7 +84,7 @@ int main()
 {
     Graph_lib::Window win(Point(100,100),xmax,ymax,"Aging Japan");
 
-    Axis x(Axis::x,Point(xoffset,ymax-yoffset),xlength
+    Axis x(Axis::x,Point(xoffset,ymax-yoffset),xlength,
           (end_year-base_year)/10,
           "year   1960   1970   1980   1990   "
           "2000   2010   2020   2030   2040");
