@@ -16,6 +16,9 @@ public:
     int operator()(int v) const { return cbase + (v-vbase)*scale; }
 };
 
+Scale xs {xoffset,base_year,xscale};
+Scale ys {ymax-yoffset,0,-yscale};
+
 istream& operator>>(istream& is, Distribution& d)
     //assume format: (year : young middle old)
 {
@@ -75,9 +78,6 @@ constexpr int end_year = 2040;
 
 constexpr double xscale = double(xlength)/(end_year-base_year);
 constexpr double yscale = double(ylength)/100;
-
-Scale xs {xoffset,base_year,xscale};
-Scale ys {ymax-yoffset,0,-yscale};
 
 int main()
 {
