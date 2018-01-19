@@ -103,7 +103,7 @@ int main()
 	win.attach(y);
 	win.attach(current_year);
 
-	gui_main();
+	Graph_lib::gui_main();
 }
 
 istream &operator>>(istream &is, Distribution &d)
