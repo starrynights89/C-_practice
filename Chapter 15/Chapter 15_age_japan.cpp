@@ -46,8 +46,7 @@ Open_polyline aged;
 istream& operator>>(istream& is, Distribution& d)
     //assume format: (year : young middle old)
 {
-    string file_name = "C://Users//alexa//source//repos//"
-    "chapter15_practice C++//Release//Japanese-age-data.txt";
+    string file_name = "japanese-age-data.txt";
 	ifstream ifs{ file_name };
 	if (!ifs) error("can't open", file_name);
 
