@@ -45,6 +45,10 @@ Open_polyline aged;
 istream& operator>>(istream& is, Distribution& d)
     //assume format: (year : young middle old)
 {
+    string file_name = "japanese-age-data.txt";
+	ifstream ifs{ file_name };
+	if (!ifs) error("can't open", file_name);
+
     char ch1 = 0;
     char ch2 = 0;
     char ch3 = 0;
@@ -66,10 +70,6 @@ istream& operator>>(istream& is, Distribution& d)
     }
     d = dd;
     return is;
-
-	string file_name = "japanese-age-data.txt";
-	ifstream ifs{ file_name };
-	if (!ifs) error("can't open", file_name);
 
 	for (Distribution d; ifs >> d;)
 	{
