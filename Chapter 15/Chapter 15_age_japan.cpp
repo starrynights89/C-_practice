@@ -20,6 +20,10 @@ public:
 Scale xs {xoffset,base_year,xscale};
 Scale ys {ymax-yoffset,0,-yscale};
 
+Open_polyline children;
+Open_polyline adults;
+Open_polyline aged;
+
 istream& operator>>(istream& is, Distribution& d)
     //assume format: (year : young middle old)
 {
@@ -60,6 +64,19 @@ istream& operator>>(istream& is, Distribution& d)
 			error("percentages don't add up");
 		}
 	}
+
+    for (Distribution d; ifs>>d;)
+    {
+        if (d.year<base_year || end_year<d.year) error("year out of range");
+        if (d.young+d.middle+d.old!=100)
+        {
+            error("percentages don't add up");
+        }
+        const int x = xs(d.year);
+        children.add(Point(x,ys(d.young)));
+        adult.add(Point(x,ys(d.middle)));
+        aged.add(Point(x,ys(d.old)));
+    }
 }
 
 constexpr int xmax = 600; //window size
