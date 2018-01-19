@@ -74,7 +74,7 @@ istream& operator>>(istream& is, Distribution& d)
         }
         const int x = xs(d.year);
         children.add(Point(x,ys(d.young)));
-        adult.add(Point(x,ys(d.middle)));
+        adults.add(Point(x,ys(d.middle)));
         aged.add(Point(x,ys(d.old)));
     }
 }
