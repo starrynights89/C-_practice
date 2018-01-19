@@ -7,10 +7,11 @@ struct Distribution
     int year, young, middle, old;
 };
 
+//data value to coordinate conversion
 class Scale
 {
-    int cbase;
-    int vbase;
+    int cbase; //coordinate base
+    int vbase; //base of values
     double scale;
 public:
     Scale(int b, int vb, double s) :cbase{b}, vbase{vb}, scale{s} { } 
@@ -45,7 +46,8 @@ Open_polyline aged;
 istream& operator>>(istream& is, Distribution& d)
     //assume format: (year : young middle old)
 {
-    string file_name = "japanese-age-data.txt";
+    string file_name = "C://Users//alexa//source//repos//"
+    "chapter15_practice C++//Release//Japanese-age-data.txt";
 	ifstream ifs{ file_name };
 	if (!ifs) error("can't open", file_name);
 
