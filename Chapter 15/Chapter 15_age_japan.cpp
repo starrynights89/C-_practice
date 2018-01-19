@@ -63,7 +63,9 @@ constexpr int ylength = ymax-yoffset-yspace;
 constexpr int base_year = 1960;
 constexpr int end_year = 2040;
 
+constexpr double xscale = double(xlength)/(end_year-base_year);
+constexpr double yscale = double(ylength)/100;
+
 int main()
 {
-
 }
