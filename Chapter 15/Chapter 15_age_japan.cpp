@@ -32,7 +32,6 @@ istream& operator>>(istream& is, Distribution& d)
     return is;
 
 	string file_name = "japanese-age-data.txt";
-	int base_year, end_year;
 	ifstream ifs{ file_name };
 	if (!ifs) error("can't open", file_name);
 
@@ -47,4 +46,24 @@ istream& operator>>(istream& is, Distribution& d)
 			error("percentages don't add up");
 		}
 	}
+}
+
+constexpr int xmax = 600; //window size
+constexpr int ymax = 400; 
+
+constexpr int xoffset = 100;
+constexpr int yoffset = 60;
+
+constexpr int xspace = 40;
+constexpr int yspace = 40;
+
+constexpr int xlength = xmax-xoffset-xspace; 
+constexpr int ylength = ymax-yoffset-yspace;
+
+constexpr int base_year = 1960;
+constexpr int end_year = 2040;
+
+int main()
+{
+
 }
