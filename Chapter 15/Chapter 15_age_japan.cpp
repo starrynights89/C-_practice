@@ -31,3 +31,19 @@ istream& operator>>(istream& is, Distribution& d)
     d = dd;
     return is;
 }
+
+string file_name = "japanese-age-data.txt";
+ifstream ifs {file_name};
+if(!ifs) error("can't open",file_name);
+
+for (Distribution d; ifs>>d;)
+{
+    if(d.year<base_year || end_year<d.year)
+    {
+        error("year out of range");
+    }
+    if(d.year+d.middle+d.old!=100)
+    {
+        error("percentages don't add up");
+    }
+}
