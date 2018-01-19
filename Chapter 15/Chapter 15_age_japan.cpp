@@ -63,20 +63,11 @@ istream& operator>>(istream& is, Distribution& d)
 		{
 			error("percentages don't add up");
 		}
+		const int x = xs(d.year);
+		children.add(Point(x, ys(d.young)));
+		adults.add(Point(x, ys(d.middle)));
+		aged.add(Point(x, ys(d.old)));
 	}
-
-    for (Distribution d; ifs>>d;)
-    {
-        if (d.year<base_year || end_year<d.year) error("year out of range");
-        if (d.young+d.middle+d.old!=100)
-        {
-            error("percentages don't add up");
-        }
-        const int x = xs(d.year);
-        children.add(Point(x,ys(d.young)));
-        adults.add(Point(x,ys(d.middle)));
-        aged.add(Point(x,ys(d.old)));
-    }
 }
 
 constexpr int xmax = 600; //window size
@@ -111,4 +102,30 @@ int main()
 
     Line current_year(Point(xs(2008),ys(0)),Point(xs(2008),ys(100)));
     current_year.set_style(Line_style::dash);
+
+    Text children_label(Point(20,children.point(0).y),"age 0-14");
+    children.set_color(Color::red);
+    children_label.set_color(Color::red);
+
+    Text adults_label(Point(20,adults.point(0).y),"age 15-64");
+    adults.set_color(Color::blue);
+    adults_label.set_color(Color::blue);
+
+    Text aged_label(Point(20,aged.point(0).y),"age 65+");
+    aged.set_color(Color::dark_green);
+    aged_label.set_color(Color::dark_green);
+
+	win.attach(children);
+	win.attach(adults);
+	win.attach(aged);
+
+	win.attach(children_label);
+	win.attach(adults_label);
+	win.attach(aged_label);
+
+	win.attach(x);
+	win.attach(y);
+	win.attach(current_year);
+
+	gui_main();
 }
