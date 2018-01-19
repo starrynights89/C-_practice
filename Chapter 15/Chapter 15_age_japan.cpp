@@ -1,4 +1,5 @@
 #include "Graph.h"
+#include "Simple_window.h"
 #include "Window.h"
 
 struct Distribution
@@ -81,7 +82,7 @@ constexpr double yscale = double(ylength)/100;
 
 int main()
 {
-    Window win(Point(100,100),xmax,ymax,"Aging Japan");
+    Graph_lib::Window win(Point(100,100),xmax,ymax,"Aging Japan");
 
     Axis x(Axis::x,Point(xoffset,ymax-yoffset),xlength
           (end_year-base_year)/10,
