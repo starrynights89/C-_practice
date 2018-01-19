@@ -18,51 +18,7 @@ public:
     int operator()(int v) const { return cbase + (v-vbase)*scale; }
 };
 
-Open_polyline children;
-Open_polyline adults;
-Open_polyline aged;
-
 istream& operator>>(istream& is, Distribution& d);
-    //assume format: (year : young middle old)
-{
-    char ch1 = 0;
-    char ch2 = 0;
-    char ch3 = 0;
-    Distribution dd;
-
-    if(is >> ch1 >> dd.year
-          >> ch2 >> dd.young >> dd. middle >> dd.old
-          >> ch3)
-    {
-        if(ch1!='('||ch2!=':'||ch3!=')')
-        {
-            is.clear(ios_base::failbit);
-            return is;
-        }
-    }
-    else
-    {
-        return is;
-    }
-    d = dd;
-    return is;
-
-	for (Distribution d; ifs >> d;)
-	{
-		if (d.year<base_year || end_year<d.year)
-		{
-			error("year out of range");
-		}
-		if (d.year + d.middle + d.old != 100)
-		{
-			error("percentages don't add up");
-		}
-		const int x = xs(d.year);
-		children.add(Point(x, ys(d.young)));
-		adults.add(Point(x, ys(d.middle)));
-		aged.add(Point(x, ys(d.old)));
-	}
-}
 
 int main()
 {
@@ -103,6 +59,26 @@ int main()
 	ifstream ifs{ file_name };
 	if (!ifs) error("can't open", file_name);
 
+    Open_polyline children;
+    Open_polyline adults;
+    Open_polyline aged;
+
+    for (Distribution d; ifs >> d;)
+	{
+		if (d.year < base_year || d.year > end_year)
+		{
+			error("year out of range");
+		}
+		if (d.young + d.middle + d.old != 100)
+		{
+			error("percentages don't add up");
+		}
+		const int x = xs(d.year);
+		children.add(Point{ x, ys(d.young) });
+		adults.add(Point{ x, ys(d.middle) });
+		aged.add(Point{ x, ys(d.old) });
+	}
+
     Text children_label(Point(20,children.point(0).y),"age 0-14");
     children.set_color(Color::red);
     children_label.set_color(Color::red);
@@ -128,4 +104,28 @@ int main()
 	win.attach(current_year);
 
 	gui_main();
+}
+
+istream &operator>>(istream &is, Distribution &d)
+	// assume format: (year: young middle old)
+{
+	char ch1 = 0;
+	char ch2 = 0;
+	char ch3 = 0;
+	Distribution dd;
+
+	if (is >> ch1 >> dd.year >> ch2 >> dd.young >> dd.middle >> dd.old >> ch3)
+	{
+		if (ch1 != '(' || ch2 != ':' || ch3 != ')')
+		{
+			is.clear(std::ios_base::failbit);
+			return is;
+		}
+	}
+	else
+	{
+		return is;
+	}
+	d = dd;
+	return is;
 }
