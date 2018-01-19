@@ -18,38 +18,13 @@ public:
     int operator()(int v) const { return cbase + (v-vbase)*scale; }
 };
 
-constexpr int xmax = 600; //window size
-constexpr int ymax = 400;
-
-constexpr int xoffset = 100; //distance from left-hand side of window to y axis
-constexpr int yoffset = 60; //distance from bottom of window to x axis
-
-constexpr int xspace = 40; //space beyond axis
-constexpr int yspace = 40;
-
-constexpr int xlength = xmax - xoffset - xspace;  //length of axes
-constexpr int ylength = ymax - yoffset - yspace;
-
-constexpr int base_year = 1960;
-constexpr int end_year = 2040;
-
-constexpr double xscale = double(xlength) / (end_year - base_year);
-constexpr double yscale = double(ylength) / 100;
-
-Scale xs {xoffset,base_year,xscale};
-Scale ys {ymax-yoffset,0,-yscale};
-
 Open_polyline children;
 Open_polyline adults;
 Open_polyline aged;
 
-istream& operator>>(istream& is, Distribution& d)
+istream& operator>>(istream& is, Distribution& d);
     //assume format: (year : young middle old)
 {
-    string file_name = "japanese-age-data.txt";
-	ifstream ifs{ file_name };
-	if (!ifs) error("can't open", file_name);
-
     char ch1 = 0;
     char ch2 = 0;
     char ch3 = 0;
@@ -91,18 +66,42 @@ istream& operator>>(istream& is, Distribution& d)
 
 int main()
 {
+    constexpr int xmax = 600; //window size
+    constexpr int ymax = 400;
+
+    constexpr int xoffset = 100; //distance from left-hand side of window to y axis
+    constexpr int yoffset = 60; //distance from bottom of window to x axis
+
+    constexpr int xspace = 40; //space beyond axis
+    constexpr int yspace = 40;
+
+    constexpr int xlength = xmax - xoffset - xspace;  //length of axes
+    constexpr int ylength = ymax - yoffset - yspace;
+
+    constexpr int base_year = 1960;
+    constexpr int end_year = 2040;
+
+    constexpr double xscale = double(xlength) / (end_year - base_year);
+    constexpr double yscale = double(ylength) / 100;
+
+    Scale xs {xoffset,base_year,xscale};
+    Scale ys {ymax-yoffset,0,-yscale};
+
     Graph_lib::Window win(Point(100,100),xmax,ymax,"Aging Japan");
 
-    Axis x(Axis::x,Point(xoffset,ymax-yoffset),xlength,
-          (end_year-base_year)/10,
-          "year   1960   1970   1980   1990   "
-          "2000   2010   2020   2030   2040");
-    x.label.move(-100,0);
+    Axis x{ Axis::x, Point{xoffset, ymax - yoffset}, xlength,
+			(end_year - base_year) / 10, "year    1960    1970    1980    1990    "
+			"2000    2010    2020    2030    2040" };
+		x.label.move(-100, 0);
 
-    Axis y(Axis::y,Point(xoffset,ymax-yoffset),ylength,10,"% of population");
+    Axis y{ Axis::y,Point(xoffset,ymax-yoffset),ylength,10,"% of population" };
 
     Line current_year(Point(xs(2008),ys(0)),Point(xs(2008),ys(100)));
     current_year.set_style(Line_style::dash);
+
+    string file_name = "japanese-age-data.txt";
+	ifstream ifs{ file_name };
+	if (!ifs) error("can't open", file_name);
 
     Text children_label(Point(20,children.point(0).y),"age 0-14");
     children.set_color(Color::red);
