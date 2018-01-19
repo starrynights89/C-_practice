@@ -6,6 +6,16 @@ struct Distribution
     int year, young, middle, old;
 };
 
+class Scale
+{
+    int cbase;
+    int vbase;
+    double scale;
+public:
+    Scale(int b, int vb, double s) :cbase{b}, vbase{vb}, scale{s} { } 
+    int operator()(int v) const { return cbase + (v-vbase)*scale; }
+};
+
 istream& operator>>(istream& is, Distribution& d)
     //assume format: (year : young middle old)
 {
