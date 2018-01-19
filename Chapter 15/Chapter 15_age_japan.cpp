@@ -1,5 +1,5 @@
 #include "Graph.h"
-#include "Simple_window.h"
+#include "Window.h"
 
 struct Distribution
 {
@@ -81,4 +81,11 @@ constexpr double yscale = double(ylength)/100;
 
 int main()
 {
+    Window win(Point(100,100),xmax,ymax,"Aging Japan");
+
+    Axis x(Axis::x,Point(xoffset,ymax-yoffset),xlength
+          (end_year-base_year)/10,
+          "year   1960   1970   1980   1990   "
+          "2000   2010   2020   2030   2040");
+    x.label.move(-100,0);
 }
