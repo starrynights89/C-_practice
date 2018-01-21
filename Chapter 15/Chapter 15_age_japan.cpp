@@ -47,12 +47,12 @@ int main()
 
     Axis x{ Axis::x, Point{xoffset, ymax - yoffset}, xlength,
 			(end_year - base_year) / 10, "year    1960    1970    1980    1990    "
-			"2000    2010    2020    2030    2040" };
+			"2000    2010    2020    2030    2040    " };
 		x.label.move(-100, 0);
 
     Axis y{ Axis::y,Point(xoffset,ymax-yoffset),ylength,10,"% of population" };
 
-    Line current_year(Point(xs(2008),ys(0)),Point(xs(2008),ys(100)));
+    Line current_year(Point(xs(2018),ys(0)),Point(xs(2018),ys(100)));
     current_year.set_style(Line_style::dash);
 
     string file_name = "japanese-age-data.txt";
