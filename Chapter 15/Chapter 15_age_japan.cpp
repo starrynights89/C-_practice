@@ -65,7 +65,7 @@ int main()
 
     for (Distribution d; ifs >> d;)
 	{
-		if (d.year < base_year || d.year > end_year)
+		if (d.year < base_year || end_year < d.year)
 		{
 			error("year out of range");
 		}
