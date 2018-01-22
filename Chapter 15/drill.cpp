@@ -4,7 +4,7 @@
 
 int main()
 {
-	Window win(Point(100,100),600,600,"Function Graphs");
+	Graph_lib::Window win(Point(100,100),600,600,"Function Graphs");
 
-    win.wait_for_button();
+    gui_main();
 }
