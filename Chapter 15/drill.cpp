@@ -37,5 +37,10 @@ int main()
     y.set_color(Color::red);
     win.attach(y);
 
+    Function s(one,r_min,r_max,orig,n_points,x_scale,y_scale);
+    Text ts(Point(100,y_orig-40),"one");
+    win.attach(s);
+	win.attach(ts);
+
 	gui_main();
 }
