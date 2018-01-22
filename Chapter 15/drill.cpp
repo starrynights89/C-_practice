@@ -22,7 +22,7 @@ int main()
     constexpr int xlength = xmax-20; //make the axis a bit smaller than the window
     constexpr int ylength = ymax-20;
 
-	Graph_lib::Window win(Point(100,100),xmax,ymax,"Function Graphs");
+	Simple_window win(Point(100,100),xmax,ymax,"Function Graphs");
 
     Axis x(Axis::x,Point(20,y_orig),xlength,xlength/x_scale,"1 == 20 pixels");
     x.set_color(Color::red);
@@ -30,7 +30,7 @@ int main()
 
     Axis y(Axis::y,Point(x_orig,ylength+20),ylength,ylength/y_scale,"1 == 20 pixels");
     y.set_color(Color::red);
-    win.attach(x);
+    win.attach(y);
 
-    gui_main();
+	win.wait_for_button();
 }
