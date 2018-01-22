@@ -24,7 +24,7 @@ int main()
     constexpr int x_scale = 20; //scaling factors
     constexpr int y_scale = 20;
 
-    constexpr int xlength = xmax-20; //make the axis a bit smaller than the window
+    constexpr int xlength = xmax-20; //axis size
     constexpr int ylength = ymax-20;
 
 	Graph_lib::Window win(Point(100,100),xmax,ymax,"Function Graphs");
