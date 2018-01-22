@@ -42,5 +42,11 @@ int main()
     win.attach(s);
 	win.attach(ts);
 
+    Function s2(slope,r_min,r_max,orig,n_points,x_scale,y_scale);
+    Text ts2(Point(100,y_orig+y_orig/2-20),"x/2");
+    win.attach(s2);
+    win.attach(ts2);
+    win.wait_for_button();
+
 	gui_main();
 }
