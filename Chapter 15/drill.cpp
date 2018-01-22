@@ -28,5 +28,9 @@ int main()
     x.set_color(Color::red);
     win.attach(x);
 
+    Axis y(Axis::y,Point(x_orig,ylength+20),ylength,ylength/y_scale,"1 == 20 pixels");
+    y.set_color(Color::red);
+    win.attach(x);
+
     gui_main();
 }
