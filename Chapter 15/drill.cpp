@@ -2,6 +2,11 @@
 #include "Simple_window.h"
 #include "Window.h"
 
+double one(double) { return 1; }
+double slope(double x) { return x/2; }
+double square(double x) { return x*x; }
+double sloping_cos(double x) { return cos(x)+slope(x); }
+
 int main()
 {
     constexpr int xmax = 600; //window size
