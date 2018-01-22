@@ -24,7 +24,7 @@ int main()
 
 	Graph_lib::Window win(Point(100,100),xmax,ymax,"Function Graphs");
 
-    Axis x(Axis::x,Point(20),y_orig,xlength,xlength/x_scale,"1 == 20 pixels");
+    Axis x(Axis::x,Point(20,y_orig),xlength,xlength/x_scale,"1 == 20 pixels");
     x.set_color(Color::red);
     win.attach(x);
 
