@@ -18,6 +18,17 @@ private:
 istream& operator>>(istream& is, Person& p)
 {
     string fname, sname;
+    int age;
+    is >> fname >> sname >> age;
+    if (!is) return is;
+    p = Person(fname,sname,age);
+    return is;
+}
+
+ostream& operator<<(ostream& os, const Person& p)
+{
+    return os << "Name: " << p.first_name() << ' ' 
+        << p.second_name() << ", age: " << p.age();
 }
 
 int main()
