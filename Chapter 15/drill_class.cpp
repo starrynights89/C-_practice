@@ -33,4 +33,10 @@ ostream& operator<<(ostream& os, const Person& p)
 
 int main()
 {
+    Person p;
+    p.n = "Goofy";
+    p.a = 63;
+    cout << "Name: " << p.n << ", age: " << p.a << endl;
+
+    keep_window_open("~");
 }
