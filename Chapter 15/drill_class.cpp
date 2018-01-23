@@ -56,5 +56,27 @@ int main()
     p.a = 63;
     cout << "Name: " << p.n << ", age: " << p.a << endl;
 
+    cout << "Enter name and age: ";
+    Person p2;
+    cin >> p2;
+    cout << p2 << endl;
+
+    Person p3;
+    while (cin>>p3)
+    {
+        cout << p3 << endl;
+    }
+
+    vector<Person> persons;
+    Person p4;
+    while (cin>>p4)
+    {
+        persons.push_back(p4);
+    }
+    for(int i=0; i<persons.size(); i++)
+    {
+        cout << persons[i] << endl;
+    }
+
     keep_window_open("~");
 }
