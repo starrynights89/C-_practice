@@ -5,7 +5,25 @@
 struct Person
 {
 	Person() : first_n(""), second_n(""), a(0) { }
-	Person(string fn, string sn, int age) :first_n(fn), second_n(sn), a(age) { }
+	Person(string fn, string sn, int age) :first_n(fn), second_n(sn), a(age)
+    {
+        const string ill_chars = ";:\"'[]*&^%$#@!";
+        for(int i=0; i<fn.size(); i++)
+        {
+            for(int j=0; j<ill_chars.size(); j++)
+            {
+                if(fn[i]==ill_chars[j]) error("illegal character: ",string(1,fn[i]));
+            }
+        }
+        for(int i=0; i<sn.size(); i++)
+        {
+            for(int j=0; j<ill_chars.size(); j++)
+            {
+                if(sn[i]==ill_chars[j]) error("illegal character: ",string(1,sn[i]));
+            }
+        }
+        if(a<0 || a>=150) error("age must be in range [0,150)");
+    }
     string first_name() const { return first_n; }
     string second_name() const { return second_n; }
     int age() const { return a; }
