@@ -12,3 +12,12 @@ private:
     static void cb_next(Address,Address); //callback for next_button
     void next(); //action to be done when next_button is pressed
 };
+
+//constructor
+Simple_window::Simple_window(Point xy,int w,int h,const string& title)
+    :Window(xy,w,h,title),
+    next_button(Point(x_max()-70,0),70,20,"Next",cb_next),
+    button_pushed(false)
+{
+    attach(next_button);
+}
