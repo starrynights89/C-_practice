@@ -51,10 +51,12 @@ ostream& operator<<(ostream& os, const Person& p)
 
 int main()
 {
+    /*
     Person p;
     p.n = "Goofy";
     p.a = 63;
     cout << "Name: " << p.n << ", age: " << p.a << endl;
+    
 
     cout << "Enter name and age: ";
     Person p2;
@@ -66,6 +68,7 @@ int main()
     {
         cout << p3 << endl;
     }
+	*/
 
     vector<Person> persons;
     Person p4;
