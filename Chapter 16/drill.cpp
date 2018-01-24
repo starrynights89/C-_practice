@@ -18,6 +18,7 @@ private:
     In_box next_y;
     Out_box xy_out;
 
+    // actions invoked by callbacks
     void next();
     void quit();
 
