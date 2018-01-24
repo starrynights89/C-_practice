@@ -11,18 +11,14 @@ struct Lines_window : Window
     Lines_window(Point xy,int w,int h,const string& title);
     Open_polyline lines;
 private:
-    Menu color_menu;
-
-    static void cb_red(Address, Address); //callback for red button
-    static void cb_blue(Address, Address); //callback for blue button
-    static void cb_black(Address, Address); //callback for black button
-
+    
     //widgets
     Button next_button; //add (next_x,next_y) to lines
     Button quit_button;
     In_box next_x;
     In_box next_y;
     Out_box xy_out;
+    Menu color_menu;
 
     // actions invoked by callbacks
     void red_pressed() { change(Color::red); }
@@ -33,7 +29,7 @@ private:
     void quit();
 
 	// callback functions
-    static void cb_red(Address, Address);
+    static void cb_red(Address, Address); 
     static void cb_blue(Address, Address);
     static void cb_black(Address, Address);
 	static void cb_next(Address, Address);
