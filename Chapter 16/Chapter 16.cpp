@@ -29,7 +29,7 @@ public:
     virtual void move(int dx,int dy);
     virtual void hide();
     virtual void show();
-    virtual void attach(Window&) = 0;
+    virtual void attach(Graph_lib::Window&) = 0;
 
     Point loc;
     int width;
@@ -37,8 +37,8 @@ public:
     string label;
     Callback do_it;
 protected:
-    Window* own; //every Widget belongs to a Window
-    FL_Widget* pw; //connection to the FLTK Widget
+    Graph_lib::Window* own; //every Widget belongs to a Window
+    Fl_Widget* pw; //connection to the FLTK Widget
 };
 
 //constructor
