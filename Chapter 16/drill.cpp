@@ -57,13 +57,14 @@ Lines_window::Lines_window(Point xy,int w,int h,const string& title)
     attach(next_x);
     attach(next_y);
     attach(xy_out);
+    xy_out.put("no point");
     attach(lines);
     color_menu.attach(new Button(Point(0,0),0,0,"red",cb_red));
     color_menu.attach(new Button(Point(0,0),0,0,"blue",cb_blue));
     color_menu.attach(new Button(Point(0,0),0,0,"black",cb_black));
     attach(color_menu);
     color_menu.hide();
-
+    attach(menu_button);
 }
 
 void Lines_window::cb_red(Address, Address pw)
@@ -80,6 +81,12 @@ void Lines_window::cb_black(Address, Address pw)
 {
     reference_to<Lines_window>(pw).black_pressed();
 }
+
+void Lines_window::cb_menu(Address, Address pw)
+{
+    reference_to<Lines_window>(pw).menu_pressed();
+}
+
 
 void Lines_window::cb_next(Address, Address pw)
 {
