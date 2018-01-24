@@ -6,17 +6,17 @@ struct Simple_window : Graph_lib::Window
     Simple_window(Point xy,int w,int h,const string & title);
     void wait_for_button(); //simple event loop
 private:
-    Button next_button; //the "Next" button
+    Graph_lib::Button next_button; //the "Next" button
     bool button_pushed; //implementation detail
 
     static void cb_next(Address,Address); //callback for next_button
     void next(); //action to be done when next_button is pressed
 };
 
-struct Button : Widget
+struct Button : Graph_lib::Widget
 {
     Button(Point xy,int w,int h,const string& label, Callback cb);
-    void attach(Window&);
+    void attach(Graph_lib::Window&);
 };
 
 class Widget
