@@ -42,6 +42,13 @@ protected:
     Fl_Widget* pw; //connection to the FLTK Widget
 };
 
+struct In_box : Widget
+{
+    In_box(Point xy,int w, int h,const string& s)
+        :Widget{xy,w,h,s,0} { }
+    int get_int();
+}
+
 //constructor
 Simple_window::Simple_window(Point xy,int w,int h,const string& title)
 	:Window{ xy,w,h,title },
