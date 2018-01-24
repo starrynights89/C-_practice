@@ -62,6 +62,11 @@ struct Out_box : Graph_lib::Widget
     void attach(Graph_lib::Window& win);
 };
 
+struct Menu : Widget
+{
+    
+}
+
 //constructor
 Simple_window::Simple_window(Point xy,int w,int h,const string& title)
 	:Window{ xy,w,h,title },
