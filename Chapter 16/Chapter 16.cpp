@@ -43,6 +43,10 @@ void Simple_window::next()
     button_pushed = true;
 }
 
-//create some object and/or manipulate some objects, display them in a window
-win.wait_for_button(); //next() causes the program to proceed from here
-//create some objects and/or manipulate some objects
+int main()
+{
+    Simple_window win();
+    //create some object and/or manipulate some objects, display them in a window
+    win.wait_for_button(); //next() causes the program to proceed from here
+    //create some objects and/or manipulate some objects
+}
