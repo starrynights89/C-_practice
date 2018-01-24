@@ -9,8 +9,9 @@ coordinates to draw shapes
 struct Lines_window : Window
 {
     Lines_window(Point xy,int w,int h,const string& title);
-    Open_polyline lines;
 private:
+    //data
+    Open_polyline lines;
     
     //widgets
     Button next_button; //add (next_x,next_y) to lines
