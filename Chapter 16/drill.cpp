@@ -19,12 +19,15 @@ private:
     In_box next_y;
     Out_box xy_out;
     Menu color_menu;
+    Button menu_button;
 
     // actions invoked by callbacks
     void red_pressed() { change(Color::red); }
     void blue_pressed() { change(Color::blue); }
     void black_pressed() { change(Color::black); }
     void change(Color c) { lines.set_color(c); }
+    void hide_menu() { color_menu.hide(); menu_button.show(); }
+    void menu_pressed() { menu_button.hide(); color_menu.show(); }
     void next();
     void quit();
 
