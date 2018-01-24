@@ -58,6 +58,21 @@ Lines_window::Lines_window(Point xy,int w,int h,const string& title)
     attach(color_menu);
 }
 
+void Lines_window::cb_red(Address, Address pw)
+{
+    reference_to<Lines_window>(pw).red_pressed();
+}
+
+void Lines_window::cb_blue(Address, Address pw)
+{
+    reference_to<Lines_window>(pw).blue_pressed();
+}
+
+void Lines_window::cb_black(Address, Address pw)
+{
+    reference_to<Lines_window>(pw).black_pressed();
+}
+
 void Lines_window::cb_next(Address, Address pw)
 {
     reference_to<Lines_window>(pw).next();
