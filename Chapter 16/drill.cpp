@@ -39,5 +39,9 @@ Lines_window::Lines_window(Point xy,int w,int h,const string& title)
     xy_out(Point(100,0),100,20,"current (x,y:")
 {
     attach(next_button);
-    
+    attach(quit_button);
+    attach(next_x);
+    attach(next_y);
+    attach(xy_out);
+    attach(lines);
 }
