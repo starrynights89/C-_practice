@@ -21,3 +21,23 @@ Simple_window::Simple_window(Point xy,int w,int h,const string& title)
 {
     attach(next_button);
 }
+
+void Simple_window::cb_next(Address,Address pw)
+//call Simple_window::next() for the window located at pw
+{
+    reference_to<Simple_window>(pw).next();
+}
+
+void Simple_window::wait_for_button()
+    //modified event loop:
+    //handle all events (as per default), quit when button_pushed becomes true
+    //this allows graphics without control inversion
+{
+    while(!button_pushed) Fl::wait();
+    button_pushed = false;
+    Fl::redraw();
+}
+
+//create some object and/or manipulate some objects, display them in a window
+win.wait_for_button(); //next() causes the program to proceed from here
+//create some objects and/or manipulate some objects
