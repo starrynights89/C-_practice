@@ -64,8 +64,22 @@ struct Out_box : Graph_lib::Widget
 
 struct Menu : Widget
 {
-    
-}
+    enum Kind { herizontal, vertical };
+    Menu(Point xy,int w,int h, Kind kk,const string& label);
+    Vector_ref<Button> selection;
+    Kind k;
+    int offset;
+    int attach(Button& b); //attach Button to Menu
+    int attach(Button* p); //attach new Button to Menu
+
+    void show()
+    {
+        for(Button& b : selection) b.show();
+    }
+    void hide(); //hide all buttons
+    void move(int dx, int dy); //move all buttons
+    void attach(Window& win); //attach all buttons to Window win
+};
 
 //constructor
 Simple_window::Simple_window(Point xy,int w,int h,const string& title)
