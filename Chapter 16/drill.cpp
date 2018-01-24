@@ -22,12 +22,14 @@ private:
     Menu color_menu;
     Button menu_button;
 
+    void change(Color c) { lines.set_color(c); }
+
+    void hide_menu() { color_menu.hide(); menu_button.show(); }
+
     // actions invoked by callbacks
     void red_pressed() { change(Color::red); }
     void blue_pressed() { change(Color::blue); }
     void black_pressed() { change(Color::black); }
-    void change(Color c) { lines.set_color(c); }
-    void hide_menu() { color_menu.hide(); menu_button.show(); }
     void menu_pressed() { menu_button.hide(); color_menu.show(); }
     void next();
     void quit();
@@ -85,6 +87,7 @@ void Lines_window::cb_black(Address, Address pw)
 void Lines_window::cb_menu(Address, Address pw)
 {
     reference_to<Lines_window>(pw).menu_pressed();
+    reference_to<Lines_window>(pw).hide_menu();
 }
 
 void Lines_window::cb_next(Address, Address pw)
