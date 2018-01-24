@@ -11,6 +11,7 @@ struct Lines_window : Window
     Lines_window(Point xy,int w,int h,const string& title);
     Open_polyline lines;
 private:
+    //widgets
     Button next_button; //add (next_x,next_y) to lines
     Button quit_button;
     In_box next_x;
@@ -20,3 +21,9 @@ private:
     void next();
     void quit();
 };
+
+//add constructor
+Lines_window::Lines_window(Point xy,int w,int h,const string& title)
+    :Window(xy,w,h,title),
+    next_button(Point(x_max()-150,0),70,20,"Next point",
+        [](Address,Address pw))
