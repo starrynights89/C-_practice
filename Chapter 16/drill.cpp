@@ -26,4 +26,5 @@ private:
 Lines_window::Lines_window(Point xy,int w,int h,const string& title)
     :Window(xy,w,h,title),
     next_button(Point(x_max()-150,0),70,20,"Next point",
-        [](Address,Address pw))
+        [](Adress,Address pw) { reference_to<Lines_window>(pw).next(); },
+    quit_button(Point())
