@@ -31,7 +31,7 @@ private:
 Lines_window::Lines_window(Point xy,int w,int h,const string& title)
     :Window(xy,w,h,title),
     next_button(Point(x_max()-150,0),70,20,"Next point",cb_next),
-    quit_button(Point(x_max()-70,0),70,20,"Quit,",cb_quit),
+    quit_button(Point(x_max()-70,0),70,20,"Quit",cb_quit),
     next_x(Point(x_max()-310,0),50,20,"next x:"),
     next_y(Point(x_max()-210,0),50,20,"next y:"),
     xy_out(Point(100,0),100,20,"current (x,y:")
