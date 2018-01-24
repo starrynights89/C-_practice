@@ -44,7 +44,8 @@ Lines_window::Lines_window(Point xy,int w,int h,const string& title)
     quit_button(Point(x_max()-70,0),70,20,"Quit",cb_quit),
     next_x(Point(x_max()-310,0),50,20,"next x:"),
     next_y(Point(x_max()-210,0),50,20,"next y:"),
-    xy_out(Point(100,0),100,20,"current (x,y):")
+    xy_out(Point(100,0),100,20,"current (x,y):"),
+    color_menu(Point(x_max()-70,30),70,20,Menu::vertical,"color")
 {
     attach(next_button);
     attach(quit_button);
