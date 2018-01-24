@@ -63,7 +63,7 @@ void Lines_window::next()
 {
     int x = next_x.get_int();
     int y = next_y.get_int();
-    lines.add(Point{x,y});
+    lines.add(Point(x,y));
 
     //update current position readout:
     ostringstream ss;
@@ -71,4 +71,10 @@ void Lines_window::next()
     xy_out.put(ss.str());
 
     redraw();
+}
+
+int main()
+{
+    Lines_window win(Point(100,100),600,400,"lines");
+    return gui_main();
 }
