@@ -13,6 +13,12 @@ private:
     void next(); //action to be done when next_button is pressed
 };
 
+struct Button : Widget
+{
+    Button(Point xy,int w,int h,const string& label, Callback cb);
+    void attach(Window&);
+};
+
 class Widget
 {
     //Widget is a handle to an Fl_widget
