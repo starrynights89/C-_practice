@@ -13,19 +13,20 @@ private:
     void next(); //action to be done when next_button is pressed
 };
 
+class Widget
+{
+    //Widget is a handle to an Fl_widget
+}
+
 //constructor
 Simple_window::Simple_window(Point xy,int w,int h,const string& title)
     :Window(xy,w,h,title),
-    next_button(Point(x_max()-70,0),70,20,"Next",cb_next),
+    next_button(Point(x_max()-70,0),70,20,"Next",
+        [](Address,Address pw) (reference_to<Simple_window>
+        (pw).next(); )),
     button_pushed(false)
 {
     attach(next_button);
-}
-
-void Simple_window::cb_next(Address,Address pw)
-//call Simple_window::next() for the window located at pw
-{
-    reference_to<Simple_window>(pw).next();
 }
 
 void Simple_window::wait_for_button()
