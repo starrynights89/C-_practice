@@ -49,7 +49,8 @@ Lines_window::Lines_window(Point xy,int w,int h,const string& title)
     next_x(Point(x_max()-310,0),50,20,"next x:"),
     next_y(Point(x_max()-210,0),50,20,"next y:"),
     xy_out(Point(100,0),100,20,"current (x,y):"),
-    color_menu(Point(x_max()-70,30),70,20,Menu::vertical,"color")
+    color_menu(Point(x_max()-70,30),70,20,Menu::vertical,"color"),
+    menu_button(Point(x_max()-80,30),80,20,"color menu",cb_menu)
 {
     attach(next_button);
     attach(quit_button);
@@ -61,6 +62,8 @@ Lines_window::Lines_window(Point xy,int w,int h,const string& title)
     color_menu.attach(new Button(Point(0,0),0,0,"blue",cb_blue));
     color_menu.attach(new Button(Point(0,0),0,0,"black",cb_black));
     attach(color_menu);
+    color_menu.hide();
+
 }
 
 void Lines_window::cb_red(Address, Address pw)
