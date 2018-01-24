@@ -21,8 +21,25 @@ struct Button : Graph_lib::Widget
 
 class Widget
 {
-    //Widget is a handle to an Fl_widget
-}
+	//Widget is a handle to an Fl_widget - it is *not* an Fl_widget
+	//we try to keep our interface classes at arm's length from FLTK
+public:
+	Widget(Point xy,int w,int h,const string& s, Callback cb);
+
+    virtual void move(int dx,int dy);
+    virtual void hide();
+    virtual void show();
+    virtual void attach(Window&) = 0;
+
+    Point loc;
+    int width;
+    int height;
+    string label;
+    Callback do_it;
+protected:
+    Window* own; //every Widget belongs to a Window
+    FL_Widget* pw; //connection to the FLTK Widget
+};
 
 //constructor
 Simple_window::Simple_window(Point xy,int w,int h,const string& title)
