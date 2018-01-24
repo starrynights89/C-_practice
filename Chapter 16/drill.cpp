@@ -87,6 +87,10 @@ void Lines_window::cb_menu(Address, Address pw)
     reference_to<Lines_window>(pw).menu_pressed();
 }
 
+void Lines_window::cb_menu(Address, Address pw)
+{
+    reference_to<Lines_window>(pw).hide_menu();
+}
 
 void Lines_window::cb_next(Address, Address pw)
 {
