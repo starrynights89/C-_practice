@@ -15,8 +15,9 @@ private:
 
 struct Button : Graph_lib::Widget
 {
-    Button(Point xy,int w,int h,const string& label, Callback cb);
-    void attach(Graph_lib::Window&);
+    Button(Point xy,int w,int h,const string& label, Callback cb)
+        :Widget{xy,ww,hh,s,cb} { }
+    void attach(Graph_lib::Window& win);
 };
 
 class Widget
@@ -70,7 +71,6 @@ void Simple_window::next()
 
 int main()
 {
-    Simple_window win();
     //create some object and/or manipulate some objects, display them in a window
     win.wait_for_button(); //next() causes the program to proceed from here
     //create some objects and/or manipulate some objects
