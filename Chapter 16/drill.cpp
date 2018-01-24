@@ -53,3 +53,8 @@ void Lines_window::cb_quit(Address, Address pw)
 {
     reference_to<Lines_window>(pw).quit();
 }
+
+void Lines_window::quit()
+{
+    hide(); //FLTK idiom to delete window
+}
