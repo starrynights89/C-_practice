@@ -15,7 +15,7 @@ private:
 
 struct Button : Graph_lib::Widget
 {
-    Button(Point xy,int w,int h,const string& label, Callback cb)
+    Button(Point xy,int ww,int hh,const string& s, Callback cb)
         :Widget{xy,ww,hh,s,cb} { }
     void attach(Graph_lib::Window& win);
 };
