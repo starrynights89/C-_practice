@@ -47,7 +47,20 @@ struct In_box : Widget
     In_box(Point xy,int w, int h,const string& s)
         :Widget{xy,w,h,s,0} { }
     int get_int();
-}
+    string get_string();
+
+    void attach(Window& win);
+};
+
+struct Out_box : Widget
+{
+    Out_box(Point xy,int w,int h, const string& s)
+        :Widget{xy,w,h,s,0} { }
+    void put(int);
+    void put(const string&);
+
+    void attach(Window& win);
+};
 
 //constructor
 Simple_window::Simple_window(Point xy,int w,int h,const string& title)
