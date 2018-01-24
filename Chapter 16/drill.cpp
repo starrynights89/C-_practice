@@ -58,3 +58,17 @@ void Lines_window::quit()
 {
     hide(); //FLTK idiom to delete window
 }
+
+void Lines_window::next()
+{
+    int x = next_x.get_int();
+    int y = next_y.get_int();
+    lines.add(Point{x,y});
+
+    //update current position readout:
+    ostringstream ss;
+    ss << '(' << x << ',' << y << ')';
+    xy_out.put(ss.str());
+
+    redraw();
+}
