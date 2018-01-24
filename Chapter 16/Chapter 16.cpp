@@ -1,3 +1,7 @@
+/*
+Code example. Code doesn't work
+*/
+
 #include "Simple_window.h"
 #include "Graph.h"
 
@@ -62,23 +66,23 @@ struct Out_box : Graph_lib::Widget
     void attach(Graph_lib::Window& win);
 };
 
-struct Menu : Widget
+struct Menu : Graph_lib::Widget
 {
     enum Kind { herizontal, vertical };
     Menu(Point xy,int w,int h, Kind kk,const string& label);
-    Vector_ref<Button> selection;
+    Vector_ref<Graph_lib::Button>selection;
     Kind k;
     int offset;
-    int attach(Button& b); //attach Button to Menu
-    int attach(Button* p); //attach new Button to Menu
+    int attach(Graph_lib::Button& b); //attach Button to Menu
+    int attach(Graph_lib::Button* p); //attach new Button to Menu
 
     void show()
     {
-        for(Button& b : selection) b.show();
+        for(Graph_lib::Button& b : selection) b.show();
     }
     void hide(); //hide all buttons
     void move(int dx, int dy); //move all buttons
-    void attach(Window& win); //attach all buttons to Window win
+    void attach(Graph_lib::Window& win); //attach all buttons to Window win
 };
 
 //constructor
@@ -111,6 +115,6 @@ void Simple_window::next()
 int main()
 {
     //create some object and/or manipulate some objects, display them in a window
-    win.wait_for_button(); //next() causes the program to proceed from here
+    return gui_main(); //next() causes the program to proceed from here
     //create some objects and/or manipulate some objects
 }
