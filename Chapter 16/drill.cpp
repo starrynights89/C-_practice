@@ -47,9 +47,13 @@ private:
     static void cb_blue(Address, Address);
     static void cb_black(Address, Address);
 	static void cb_menu(Address, Address);
+    static void cb_solid(Address, Address);
+    static void cb_dash(Address, Address);
+    static void cb_dot(Address, Address);
+    static void cb_smenu(Address, Address);
 	static void cb_next(Address, Address);
 	static void cb_quit(Address, Address);
-};
+}; //finished class
 
 //add constructor
 Lines_window::Lines_window(Point xy,int w,int h,const string& title)
