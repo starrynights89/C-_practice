@@ -64,7 +64,9 @@ Lines_window::Lines_window(Point xy,int w,int h,const string& title)
     next_y(Point(x_max()-210,0),50,20,"next y:"),
     xy_out(Point(100,0),100,20,"current (x,y):"),
     color_menu(Point(x_max()-70,30),70,20,Menu::vertical,"color"),
-    menu_button(Point(x_max()-80,30),80,20,"color menu",cb_menu)
+    menu_button(Point(x_max()-80,30),80,20,"color menu",cb_menu),
+    style_menu(Point(x_max()-70,60),70,20,Menu::vertical,"style"),
+    smenu_button(Point(x_max()-80,60),80,20,"style menu",cb_menu)
 {
     attach(next_button);
     attach(quit_button);
