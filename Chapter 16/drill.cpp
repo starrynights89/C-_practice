@@ -27,6 +27,7 @@ private:
     void change(Color c) { lines.set_color(c); }
     void style_change(Line_style l) { lines.set_style(l); }
 
+    void show_menu();
     void hide_menu() { color_menu.hide(); menu_button.show(); }
     void hide_smenu() { style_menu.hide(); smenu_button.show(); }
 
@@ -87,6 +88,33 @@ Lines_window::Lines_window(Point xy,int w,int h,const string& title)
     attach(style_menu);
     style_menu.hide();
     attach(smenu_button);
+}
+
+//move style menu when color menu is pressed
+void Lines_window::show_menu()
+{
+    int dy = (color_menu.selection.size()-1)*20;
+    menu_button.move(0.dy);
+    for (int i = 0; i<style_menu.selection.size(); i++)
+    {
+        style_menu.selection[i].move(0,dy);
+    }
+    hide_smenu();
+    color_menu.show();
+}
+
+//move style menu when color menu is pressed
+void Lines_window::hide_menu()
+{
+    color_menu.hide();
+    menu_button.show();
+    int dy = -(color_menu.selection.size()-1)*20;
+    smenu_button.move(0,dy);
+    for (int i = 0; i<style_menu.selection.size(); i++)
+    {
+        style_menu.selection[i].move(0,dy);
+    }
+    hide_smenu();
 }
 
 void Lines_window::cb_red(Address, Address pw)
