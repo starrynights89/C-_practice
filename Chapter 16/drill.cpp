@@ -67,7 +67,7 @@ Lines_window::Lines_window(Point xy,int w,int h,const string& title)
     color_menu(Point(x_max()-70,30),70,20,Menu::vertical,"color"),
     menu_button(Point(x_max()-80,30),80,20,"color menu",cb_menu),
     style_menu(Point(x_max()-70,60),70,20,Menu::vertical,"style"),
-    smenu_button(Point(x_max()-80,60),80,20,"style menu",cb_menu)
+    smenu_button(Point(x_max()-80,60),80,20,"style menu",cb_smenu)
 {
     attach(next_button);
     attach(quit_button);
@@ -94,7 +94,7 @@ Lines_window::Lines_window(Point xy,int w,int h,const string& title)
 void Lines_window::show_menu()
 {
     int dy = (color_menu.selection.size()-1)*20;
-    menu_button.move(0,dy);
+    smenu_button.move(0,dy);
     for (int i = 0; i<style_menu.selection.size(); i++)
     {
         style_menu.selection[i].move(0,dy);
