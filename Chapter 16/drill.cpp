@@ -54,7 +54,7 @@ private:
     static void cb_smenu(Address, Address);
 	static void cb_next(Address, Address);
 	static void cb_quit(Address, Address);
-}; //finished class
+};
 
 //add constructor
 Lines_window::Lines_window(Point xy,int w,int h,const string& title)
