@@ -81,6 +81,12 @@ Lines_window::Lines_window(Point xy,int w,int h,const string& title)
     attach(color_menu);
     color_menu.hide();
     attach(menu_button);
+    style_menu.attach(new Button(Point(0,0),0,0,"solid",cb_solid));
+    style_menu.attach(new Button(Point(0,0),0,0,"dashed",cb_dash));
+    style_menu.attach(new Button(Point(0,0),0,0,"dotted",cb_dot));
+    attach(style_menu);
+    style_menu.hide();
+    attach(smenu_button);
 }
 
 void Lines_window::cb_red(Address, Address pw)
