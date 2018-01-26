@@ -109,6 +109,26 @@ void Lines_window::cb_menu(Address, Address pw)
     reference_to<Lines_window>(pw).menu_pressed();
 }
 
+void Lines_window::cb_solid(Address, Address pw)
+{
+    reference_to<Lines_window>(pw).solid_pressed();
+}
+
+void Lines_window::cb_dash(Address, Address pw)
+{
+    reference_to<Lines_window>(pw).dash_pressed();
+}
+
+void Lines_window::cb_dot(Address, Address pw)
+{
+    reference_to<Lines_window>(pw).dot_pressed();
+}
+
+void Lines_window::cb_smenu(Address, Address pw)
+{
+    reference_to<Lines_window>(pw).smenu_pressed();
+}
+
 void Lines_window::cb_next(Address, Address pw)
 {
     reference_to<Lines_window>(pw).next();
