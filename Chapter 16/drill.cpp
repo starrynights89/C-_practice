@@ -94,7 +94,7 @@ Lines_window::Lines_window(Point xy,int w,int h,const string& title)
 void Lines_window::show_menu()
 {
     int dy = (color_menu.selection.size()-1)*20;
-    menu_button.move(0.dy);
+    menu_button.move(0,dy);
     for (int i = 0; i<style_menu.selection.size(); i++)
     {
         style_menu.selection[i].move(0,dy);
