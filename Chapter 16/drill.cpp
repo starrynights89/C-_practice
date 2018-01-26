@@ -27,15 +27,15 @@ private:
     void change(Color c) { lines.set_color(c); }
     void style_change(Line_style l) { lines.set_style(l); }
 
-    void show_menu();
-    void hide_menu() { color_menu.hide(); menu_button.show(); }
+    void show_menu(); //hide style menu
+    void hide_menu(); //hide style meny
     void hide_smenu() { style_menu.hide(); smenu_button.show(); }
 
     // actions invoked by callbacks
     void red_pressed() { change(Color::red); hide_menu(); }
     void blue_pressed() { change(Color::blue); hide_menu(); }
     void black_pressed() { change(Color::black); hide_menu(); }
-    void menu_pressed() { menu_button.hide(); color_menu.show(); }
+    void menu_pressed() { menu_button.hide(); show_menu(); }
     void solid_pressed() { style_change(Line_style(Line_style::solid)); hide_smenu(); }
     void dash_pressed() { style_change(Line_style(Line_style::dash)); hide_smenu(); }
     void dot_pressed() { style_change(Line_style(Line_style::dot)); hide_smenu(); }
