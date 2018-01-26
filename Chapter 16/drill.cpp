@@ -25,7 +25,7 @@ private:
     Button smenu_button;
 
     void change(Color c) { lines.set_color(c); }
-    void style_change(Line_style 1) { lines.set_style(1); }
+    void style_change(Line_style l) { lines.set_style(l); }
 
     void hide_menu() { color_menu.hide(); menu_button.show(); }
     void hide_smenu() { style_menu.hide(); smenu_button.show(); }
