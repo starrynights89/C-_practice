@@ -1,9 +1,20 @@
 #include "std_lib_facilities.h"
 
-void main(double bo, int i, int* p)
+void sizes(char, int, int*);
+
+int main()
 {
-	cout << "the size of double is " << sizeof(double) << ' ' << sizeof(bo) << '\n';
+	char a = 0;
+	int b = 0; 
+	int* c; 
+	
+	sizes(a, b, c);
+	return 0;
+}
+
+void sizes(char ch, int i, int* p)
+{
+	cout << "the size of char is " << sizeof(char) << ' ' << sizeof(ch) << '\n';
 	cout << "the size of int is " << sizeof(int) << ' ' << sizeof(i) << '\n';
 	cout << "the size of int* is " << sizeof(int*) << ' ' << sizeof(p) << '\n';
-	keep_window_open();
 }
