@@ -6,7 +6,7 @@ class vector
 	int sz; //the size
 	double* elm; //a pointer to the elements
 public:
-	vector(int s) :sz{s}, elem{new double[s]} {/*...*/} //constructor
+	vector(int s):sz{s}, elem{new double[s]} {/*...*/} //constructor
 	~vector() { delete[] elem; } 
 	
 	int size() const { return sz; } //the current size
@@ -14,6 +14,8 @@ public:
 	double get(int n) const{ return elem[n]; } //access : read
 	void set(int n, double v) { elem[n]=v; } //access : write
 };
+
+vector<T>vector;
 
 int main()
 {
