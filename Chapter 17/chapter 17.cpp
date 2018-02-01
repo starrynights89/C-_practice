@@ -6,9 +6,10 @@ int main()
 {
 	char a = 0;
 	int b = 0; 
-	int* c; 
+	int* c = 0; 
 	
 	sizes(a, b, c);
+	keep_window_open();
 	return 0;
 }
 
