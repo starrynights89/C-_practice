@@ -23,6 +23,18 @@ private:
     Link* succ;
 };
 
+Link* Link::insert(Link* n)
+{
+    Link* p = this;
+    if(n==nullptr) return p;
+    if(p==nullptr) return n;
+    n->succ = p;
+    if(p->prev)p->prev->succ = n;
+    n->prev=p->prev;
+    p->prev=n;
+    return n;
+}
+
 Link* norse_gods = new Link("Thor");
 norse_gods = insert(norse_gods,new Link{"Odin"});
 norse_gods = insert(norse_gods,new Link{"Zeus"});
